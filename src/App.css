@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+.items{
+  text-decoration: none;
+  color: azure;
+}
+.header{
+  background-color: #282c34;
+}
+.titulo{
+  color: red;
+}
+.lista{
+  display: flex;
+  justify-content: space-around;
+}
