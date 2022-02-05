@@ -5,7 +5,9 @@ function Header() {
     return( <div className="header">
         <div>
            <h1 className="titulo">Dual Key Gaming</h1>
-         </div>    
+           <img className="asda" alt="logo" src="src\img\a.png"/>
+            </div>
+
         <div className="contenedor-lista">
         <ul className="lista">
         <li className="items"> <a href="#">Componentes</a></li>
