@@ -45,7 +45,7 @@
   padding-top: 15px;
 }
 .titulo{
-  color: red;
+  color: rgb(153, 49, 49);
 }
 .lista{
   display: flex;
@@ -66,3 +66,4 @@
   
 
 }
+
