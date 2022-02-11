@@ -1,12 +1,13 @@
 import react from "react";
-import logo from '../img/a.png'
+import logo from '../img/logoo.png'
 import cart from '../img/cart.png'
 import CartWidget from "./CartWidget";
 
-function Header() {
+function Header(props) {
     
     return( <div className="header">
         <div className="cont-1">
+            
             <div className="contenedor-logo"><img className="logo" alt="logo" src={logo}/></div>
             <div className="contenedor-carro">
             <CartWidget/>
@@ -17,9 +18,9 @@ function Header() {
 
         <div className="contenedor-lista">
         <ul className="lista">
-        <li className="items"> <a href="/#">Componentes</a></li>
-        <li className="items"><a  href="/#">Pc completa</a></li>
-        <li className="items"><a  href="/#"> Perifericos</a></li>
+        <li className="items"> <a className="opciones" href="/#">Componentes</a></li>
+        <li className="items"><a className="opciones" href="/#">Pc completa</a></li>
+        <li className="items"><a className="opciones" href="/#"> Perifericos</a></li>
         </ul>
         </div>
      </div>
