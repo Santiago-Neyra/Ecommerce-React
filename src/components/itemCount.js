@@ -1,6 +1,9 @@
 import React, {useState} from "react";
 
 function ItemCount (props){
+
+    
+
     const [numero , setNumero] = useState(props.initial)
 
     const clickMas=()=>{
@@ -20,7 +23,7 @@ function ItemCount (props){
             </div>
 
             <div className="linea-boton">
-                <button className="buton" >Agregar al Carrito</button>
+                <button className="buton"  >Agregar al Carrito</button>
             </div>
         </div>
     )
