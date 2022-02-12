@@ -1,14 +1,14 @@
 
 import './App.css';
-import Header from './components/header.js';
+import NavBar from './components/navbar.js';
 import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/itemCount';
 function App() {
   return (
     <div className="App">
-     <Header> 
+     <NavBar> 
       
-     </Header>
+     </NavBar>
      <ItemListContainer greeting="Productos destacados:" />
      
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import logo from '../img/logoo.png'
 import CartWidget from "./CartWidget";
 
-function Header(props) {
+function NavBar(props) {
     
     return( <div className="header">
         <div className="cont-1">
@@ -25,4 +25,4 @@ function Header(props) {
      </div>
      )
 }
-export default Header;
+export default NavBar;
