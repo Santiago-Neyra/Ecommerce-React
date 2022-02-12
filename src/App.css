@@ -129,11 +129,11 @@
   padding: 10px;
 }
 .buton:hover{
-  font-size: 110%;
-  transition: 1s;
+  transition: 0.5s;
   background-color: rgb(165, 52, 52);
   color: white;
   border: white solid 2px;
+  transform: scale(1.1);
 }
 .linea{
   display: flex;
@@ -156,4 +156,29 @@
   margin: 0px;
   color: rgb(165, 52, 52);
   font-weight: bold;
+}
+.carta{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: #000000;
+  padding: 20px;
+  
+}
+.stock{
+ font-weight: bold;
+}
+.detalle{
+  background-color: rgb(165, 52, 52);
+  border-radius: 20px;
+  margin-bottom: 10px;
+  color: white;
+  border: none;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.detalle:hover {
+  transform: scale(1.1);
+  transition: 1s;
 }

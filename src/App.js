@@ -10,7 +10,7 @@ function App() {
       
      </Header>
      <ItemListContainer greeting="Productos destacados:" />
-     <ItemCount stock="5" initial={1} />
+     
     </div>
   );
 }

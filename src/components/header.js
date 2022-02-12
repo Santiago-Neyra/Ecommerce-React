@@ -1,6 +1,5 @@
-import react from "react";
+import React from "react";
 import logo from '../img/logoo.png'
-import cart from '../img/cart.png'
 import CartWidget from "./CartWidget";
 
 function Header(props) {

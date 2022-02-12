@@ -1,0 +1,34 @@
+[
+    {
+        "id":"1",
+        "name": "CPU AMD RYZEN 5 2400G PRO AM4 C/VIDEO OEM",
+        "price":"27235",
+        "description":"Se venden con mother y memoria sin cooler El producto seleccionado es Cpu Amd Ryzen 5 2400g Pro Am4 C/video Oem, su marca es Amd y pertenece a la categoría Microprocesadores Amd.¡ Apresurate a comprarlo ! Queda poco stock en este producto.",
+        "stock":5,
+        "ruta":"../productos/2400G.png"
+          
+    },
+    {
+        "id":"2",
+        "name": "DDR4 8GB 3200MHZ MUSHKIN SILVERLINE",
+        "price":"4750",
+        "description":"Se venden con mother y memoria sin cooler El producto seleccionado es Cpu Amd Ryzen 5 2400g Pro Am4 C/video Oem, su marca es Amd y pertenece a la categoría Microprocesadores Amd.¡ Apresurate a comprarlo ! Queda poco stock en este producto.",
+        "stock":1
+    },
+    {
+        "id":"3",
+        "name": "MOTHER BIOSTAR A320MH AM4",
+        "price":"7900",
+        "description":"Se venden con mother y memoria sin cooler El producto seleccionado es Cpu Amd Ryzen 5 2400g Pro Am4 C/video Oem, su marca es Amd y pertenece a la categoría Microprocesadores Amd.¡ Apresurate a comprarlo ! Queda poco stock en este producto.",
+        "stock":7
+          
+    },
+    {
+        "id":"4",
+        "name": "HD 1 TB SATA III SEAGATE",
+        "price":"5200",
+        "description":"Se venden con mother y memoria sin cooler El producto seleccionado es Cpu Amd Ryzen 5 2400g Pro Am4 C/video Oem, su marca es Amd y pertenece a la categoría Microprocesadores Amd.¡ Apresurate a comprarlo ! Queda poco stock en este producto.",
+        "stock":2
+          
+    }
+]

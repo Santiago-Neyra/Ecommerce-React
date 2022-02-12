@@ -1,4 +1,4 @@
-import react, {Component,useState} from "react";
+import React, {useState} from "react";
 import { Fragment } from "react/cjs/react.production.min";
 import cart from '../img/cart.png'
 

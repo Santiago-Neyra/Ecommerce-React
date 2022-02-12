@@ -1,4 +1,4 @@
-import react, {useState} from "react";
+import React, {useState} from "react";
 
 function ItemCount (props){
     const [numero , setNumero] = useState(props.initial)
@@ -14,9 +14,9 @@ function ItemCount (props){
     return(
         <div className="col columna">
             <div className="linea">
-                <a onClick={clickMenos} className="mas">-</a>
+                <a onClick={clickMenos} className="mas" href="#">-</a>
                 <p className="numero-agregar">{numero}</p>
-                <a onClick={clickMas} className="mas">+</a>
+                <a onClick={clickMas} className="mas" href="#">+</a>
             </div>
 
             <div className="linea-boton">
