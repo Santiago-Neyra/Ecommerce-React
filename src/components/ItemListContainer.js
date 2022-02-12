@@ -1,6 +1,24 @@
+import React, {useEffect, useState} from "react";
 import Lista from "./elementos.json"
 import ItemCount from "./itemCount";
 function ItemListContainer({greeting}) {
+
+const [productos, setProductos]= useState([]);
+
+const promesa= new Promise((resolve, reject)=>{
+setTimeout(()=>{
+
+    resolve(Lista)
+}, 2000);
+
+})
+useEffect(()=>{
+    promesa.then(resultado=>{
+     setProductos(resultado)
+    })
+})
+
+
 function fstock(stock){
     if(stock>2){
         return ({color: "green"})
@@ -13,7 +31,7 @@ return(
 <div className="item-list">
 <h1 className="palabra-greeting"> {greeting} </h1>
  <div className="row">
- {Lista.map((elemento)=> <div  className="carta col-3" key={elemento.id}>
+ {productos.map((elemento)=> <div  className="carta col-3" key={elemento.id}>
      
 
      <div>
