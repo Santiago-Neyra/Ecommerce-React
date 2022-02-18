@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Lista from "./elementos.json"
 import {ItemCount} from "./itemCount";
+import {ItemDetailContainer} from  "../components/itemDetailContainer/ItemDetailCointainer"
 export const ItemListContainer =({greeting})=> {
 
 const [productos, setProductos]= useState([]);
@@ -33,6 +34,7 @@ function fstock(stock){
 }
 return(
 <div className="item-list">
+<ItemDetailContainer/>
 <h1 className="palabra-greeting"> {greeting} </h1>
  <div className="row">
  {productos.map((elemento)=> <div  className="carta col-3" key={elemento.id}>
@@ -53,7 +55,7 @@ return(
  </div>
 
 
-
+ 
 </div>
 )
 

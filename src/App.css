@@ -194,6 +194,7 @@
 }
 .footer{
   background-color: #000000;
+  padding: 15px;
 }
 .redes{
   display: flex;
@@ -215,4 +216,9 @@
 .logos{
   margin-right: 10px;
   margin-left: 10px;
+}
+.palabra-greeting{
+  background-color: #000000;
+  border-radius: 20px;
+  padding: 10px;
 }
