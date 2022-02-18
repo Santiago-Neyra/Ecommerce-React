@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Lista from "./elementos.json"
-import ItemCount from "./itemCount";
-function ItemListContainer({greeting}) {
+import {ItemCount} from "./itemCount";
+export const ItemListContainer =({greeting})=> {
 
 const [productos, setProductos]= useState([]);
 // CREAMOS UNA PROMESA QUE TIENE DOS FUNCIONES, RESOLVE Y REJECT
@@ -39,8 +39,9 @@ return(
      
 
      <div>
-         <h2>{elemento.name}</h2>
-         <img className="img-producto" src={elemento.ruta} alt="Producto" /> 
+         
+         <img className="img-producto img-fluid" src={elemento.ruta} alt="Producto" /> 
+         <h2 className="nombre-producto">{elemento.name}</h2>
         <p>{elemento.description}</p>
         <button className="detalle">VER DETALLE +</button>
         <h4>Precio contado: ${elemento.price}</h4>
@@ -57,4 +58,3 @@ return(
 )
 
 }
-export default ItemListContainer;

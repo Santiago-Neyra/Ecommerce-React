@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 80%;
+  margin: auto;
 }
 
 .App-logo {
@@ -103,7 +105,7 @@
   margin-right: 10px;
 }
 .item-list{
-  background-color: #000000;
+  background-color: #ffffff;
   color: white;
   width: 90%;
   margin: auto;
@@ -184,5 +186,33 @@
 }
 .img-producto{
   width: 300px;
+  
  
+}
+.nombre-producto{
+  font-size: 1.2rem;
+}
+.footer{
+  background-color: #000000;
+}
+.redes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacto-footer{
+  display: flex;
+  justify-content: center;
+  color: rgb(165, 52, 52);
+  align-items: center;
+  padding: 10px;
+}
+.contacto-footer p{
+  margin: 0;
+  
+}
+.logos{
+  margin-right: 10px;
+  margin-left: 10px;
 }

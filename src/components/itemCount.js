@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function ItemCount (props){
+export const ItemCount = (props)=>{
 
     
 
@@ -31,4 +31,3 @@ function ItemCount (props){
 
 
 }
-export default ItemCount;

@@ -1,17 +1,24 @@
 
 import './App.css';
 import NavBar from './components/navbar.js';
-import ItemListContainer from './components/ItemListContainer';
-import ItemCount from './components/itemCount';
+import {ItemListContainer} from './components/ItemListContainer';
+import {ItemCount} from './components/itemCount';
+import {BrowserRouter, Route,Routes} from 'react-router-dom';
+import {Home}  from './components/Home/Home';
+import { ItemDetailContainer } from './components/itemDetailContainer/ItemDetailCointainer';
+import { Footer } from './components/footer';
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
      <NavBar> 
       
      </NavBar>
-     <ItemListContainer greeting="Productos destacados:" />
-     
-    </div>
+     <Routes>
+       <Route path="/" element={<Home/>}/>
+       <Route path="/details" element={<ItemDetailContainer/>}/>
+     </Routes>
+     <Footer></Footer>
+     </BrowserRouter>
   );
 }
 
