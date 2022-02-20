@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Lista from "./elementos.json"
 import {ItemCount} from "./itemCount";
+import {Link} from 'react-router-dom'
 import {ItemDetailContainer} from  "../components/itemDetailContainer/ItemDetailCointainer"
 export const ItemListContainer =({greeting})=> {
 
@@ -34,7 +35,7 @@ function fstock(stock){
 }
 return(
 <div className="item-list">
-<ItemDetailContainer/>
+
 <h1 className="palabra-greeting"> {greeting} </h1>
  <div className="row">
  {productos.map((elemento)=> <div  className="carta col-3" key={elemento.id}>
@@ -45,7 +46,7 @@ return(
          <img className="img-producto img-fluid" src={elemento.ruta} alt="Producto" /> 
          <h2 className="nombre-producto">{elemento.name}</h2>
         <p>{elemento.description}</p>
-        <button className="detalle">VER DETALLE +</button>
+    <Link to={"/detalles/"+( parseInt(elemento.id))}><button className="detalle">VER DETALLE +</button></Link>
         <h4>Precio contado: ${elemento.price}</h4>
         <p style={fstock(elemento.stock)} className="stock">stock: {elemento.stock}</p>
         <ItemCount stock={elemento.stock} initial={1} />

@@ -1,6 +1,7 @@
 import React from "react";
 import logo from '../img/logoo.png'
 import CartWidget from "./CartWidget";
+import {BrowserRouter, Route,Routes} from 'react-router-dom';
 
 function NavBar(props) {
     

@@ -169,6 +169,7 @@
 }
 .stock{
  font-weight: bold;
+ 
 }
 .detalle{
   background-color: rgb(165, 52, 52);
@@ -221,4 +222,28 @@
   background-color: #000000;
   border-radius: 20px;
   padding: 10px;
+}
+.dos{
+  color: #000000;
+}
+.item-detail{
+  margin: auto;
+  margin-top: 30px;
+}
+.imagen-detail{
+  height: 90%;
+}
+.contenedor-img-detail{
+  display: flex;
+  
+  justify-content: center;
+}
+.textos-detalles{
+  height: 90%;
+  border: 1px #b1acac9e solid;
+    border-radius: 19px;
+  
+}
+.linea-boton{
+  display: flex;
 }
