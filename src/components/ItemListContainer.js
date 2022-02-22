@@ -46,7 +46,7 @@ return(
          <img className="img-producto img-fluid" src={elemento.ruta} alt="Producto" /> 
          <h2 className="nombre-producto">{elemento.name}</h2>
         <p>{elemento.description}</p>
-    <Link to={"/detalles/"+( parseInt(elemento.id))}><button className="detalle">VER DETALLE +</button></Link>
+    <Link to={"/detalles/"+( parseInt(elemento.id)-1)}><button className="detalle">VER DETALLE +</button></Link>
         <h4>Precio contado: ${elemento.price}</h4>
         <p style={fstock(elemento.stock)} className="stock">stock: {elemento.stock}</p>
         <ItemCount stock={elemento.stock} initial={1} />

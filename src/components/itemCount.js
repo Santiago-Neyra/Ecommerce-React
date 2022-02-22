@@ -23,7 +23,7 @@ export const ItemCount = (props)=>{
             </div>
 
             <div className="linea-boton">
-                <button className="buton"  >Agregar al Carrito</button>
+                <button className="buton"  >Sumar al Carrito</button>
             </div>
         </div>
     )
