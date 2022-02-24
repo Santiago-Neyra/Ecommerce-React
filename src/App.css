@@ -272,3 +272,6 @@
 .precio-detail-numero{
   color: rgb(47, 102, 76);
 }
+.link-detalle{
+  text-decoration: none;
+}

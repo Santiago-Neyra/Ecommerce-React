@@ -21,9 +21,9 @@ function NavBar(props) {
 
         <div className="contenedor-lista">
         <ul className="lista">
-        <li className="items"> <a className="opciones" href="/#">Componentes</a></li>
-        <li className="items"><a className="opciones" href="/#">Pc completa</a></li>
-        <li className="items"><a className="opciones" href="/#"> Perifericos</a></li>
+        <Link to="/categoria/a" className="items"> <div className="opciones" >Pc completa</div></Link>
+        <Link className="items" to="/categoria/amd"><div className="opciones" >Amd</div></Link>
+        <Link to="/categoria/intel" className="items"><div className="opciones" > Intel</div></Link>
         </ul>
         </div>
      </div>

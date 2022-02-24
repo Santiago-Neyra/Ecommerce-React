@@ -3,7 +3,19 @@ import Lista from "./elementos.json"
 import {ItemCount} from "./itemCount";
 import {Link} from 'react-router-dom'
 import {ItemDetailContainer} from  "../components/itemDetailContainer/ItemDetailCointainer"
+import { useParams } from "react-router-dom"
 export const ItemListContainer =({greeting})=> {
+    
+
+    const {categoriaId} = useParams();
+    
+    console.log(categoriaId);
+    
+    useEffect(()=>{
+
+
+
+    }, [categoriaId])
 
 const [productos, setProductos]= useState([]);
 // CREAMOS UNA PROMESA QUE TIENE DOS FUNCIONES, RESOLVE Y REJECT
@@ -33,6 +45,75 @@ function fstock(stock){
         return ({color:"red"})
     }
 }
+const productosIntel= productos.filter(elemento=>elemento.marca==="intel")
+const productosAmd= productos.filter(elemento=>elemento.marca==="amd")
+
+//PARTE INTEL
+if(categoriaId==="intel"){
+    return(
+        <div className="item-list">
+        
+        <h1 className="palabra-greeting"> {greeting} </h1>
+         <div className="row">
+         {productosIntel.map((elemento)=>
+         
+            
+         <div  className="carta col-3" key={elemento.id}>
+             
+
+             <div>
+                 
+                 <img className="img-producto img-fluid" src={elemento.ruta} alt="Producto" /> 
+                 <h2 className="nombre-producto">{elemento.name}</h2>
+                <p>{elemento.description}</p>
+            <Link to={"/detalles/"+( parseInt(elemento.id)-1)}><button className="detalle">VER DETALLE +</button></Link>
+                <h4>Precio contado: ${elemento.price}</h4>
+                <p style={fstock(elemento.stock)} className="stock">stock: {elemento.stock}</p>
+                <ItemCount stock={elemento.stock} initial={1} />
+             </div>
+             
+             </div>)}
+         </div>
+        
+        
+         
+        </div>
+        )
+        
+}
+if(categoriaId==="amd"){
+    return(
+        <div className="item-list">
+        
+        <h1 className="palabra-greeting"> {greeting} </h1>
+         <div className="row">
+         {productosAmd.map((elemento)=>
+         
+            
+         <div  className="carta col-3" key={elemento.id}>
+             
+
+             <div>
+                 
+                 <img className="img-producto img-fluid" src={elemento.ruta} alt="Producto" /> 
+                 <h2 className="nombre-producto">{elemento.name}</h2>
+                <p>{elemento.description}</p>
+            <Link to={"/detalles/"+( parseInt(elemento.id)-1)}><button className="detalle">VER DETALLE +</button></Link>
+                <h4>Precio contado: ${elemento.price}</h4>
+                <p style={fstock(elemento.stock)} className="stock">stock: {elemento.stock}</p>
+                <ItemCount stock={elemento.stock} initial={1} />
+             </div>
+             
+             </div>)}
+         </div>
+        
+        
+         
+        </div>
+        )
+        
+}
+else{
 return(
 <div className="item-list">
 
@@ -46,7 +127,7 @@ return(
          <img className="img-producto img-fluid" src={elemento.ruta} alt="Producto" /> 
          <h2 className="nombre-producto">{elemento.name}</h2>
         <p>{elemento.description}</p>
-    <Link to={"/detalles/"+( parseInt(elemento.id)-1)}><button className="detalle">VER DETALLE +</button></Link>
+    <Link to={"/detalles/"+( parseInt(elemento.id)-1)} className="d-flex justify-content-center link-detalle" ><button className="detalle">VER DETALLE +</button></Link>
         <h4>Precio contado: ${elemento.price}</h4>
         <p style={fstock(elemento.stock)} className="stock">stock: {elemento.stock}</p>
         <ItemCount stock={elemento.stock} initial={1} />
@@ -58,6 +139,6 @@ return(
 
  
 </div>
-)
+)}
 
 }
