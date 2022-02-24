@@ -66,8 +66,8 @@ if(categoriaId==="intel"){
                  <img className="img-producto img-fluid" src={elemento.ruta} alt="Producto" /> 
                  <h2 className="nombre-producto">{elemento.name}</h2>
                 <p>{elemento.description}</p>
-            <Link to={"/detalles/"+( parseInt(elemento.id)-1)}><button className="detalle">VER DETALLE +</button></Link>
-                <h4>Precio contado: ${elemento.price}</h4>
+            <Link className="link-detalle" to={"/detalles/"+( parseInt(elemento.id)-1)}><button className="detalle">VER DETALLE +</button></Link>
+                <h4 className="precio-categorias">Precio contado: ${elemento.price}</h4>
                 <p style={fstock(elemento.stock)} className="stock">stock: {elemento.stock}</p>
                 <ItemCount stock={elemento.stock} initial={1} />
              </div>
@@ -98,8 +98,8 @@ if(categoriaId==="amd"){
                  <img className="img-producto img-fluid" src={elemento.ruta} alt="Producto" /> 
                  <h2 className="nombre-producto">{elemento.name}</h2>
                 <p>{elemento.description}</p>
-            <Link to={"/detalles/"+( parseInt(elemento.id)-1)}><button className="detalle">VER DETALLE +</button></Link>
-                <h4>Precio contado: ${elemento.price}</h4>
+            <Link className="link-detalle" to={"/detalles/"+( parseInt(elemento.id)-1)}><button className="detalle">VER DETALLE +</button></Link>
+                <h4 className="precio-categorias">Precio contado: ${elemento.price}</h4>
                 <p style={fstock(elemento.stock)} className="stock">stock: {elemento.stock}</p>
                 <ItemCount stock={elemento.stock} initial={1} />
              </div>
@@ -128,7 +128,7 @@ return(
          <h2 className="nombre-producto">{elemento.name}</h2>
         <p>{elemento.description}</p>
     <Link to={"/detalles/"+( parseInt(elemento.id)-1)} className="d-flex justify-content-center link-detalle" ><button className="detalle">VER DETALLE +</button></Link>
-        <h4>Precio contado: ${elemento.price}</h4>
+        <h4 className="precio-categorias">Precio contado: ${elemento.price}</h4>
         <p style={fstock(elemento.stock)} className="stock">stock: {elemento.stock}</p>
         <ItemCount stock={elemento.stock} initial={1} />
      </div>
