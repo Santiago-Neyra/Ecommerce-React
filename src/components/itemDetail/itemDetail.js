@@ -1,7 +1,7 @@
 import Lista from "../elementos.json"
 import { useParams } from "react-router-dom"
 import React, {useEffect, useState} from "react";
-import { ItemCount } from "../itemCount";
+import { ItemCount } from "../itemCount/itemCount";
 import { textAlign } from "@mui/system";
 
 

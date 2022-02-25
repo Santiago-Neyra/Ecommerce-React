@@ -6,11 +6,13 @@ export const ItemCount = (props)=>{
 
     const [numero , setNumero] = useState(props.initial)
 
-    const clickMas=()=>{
+    const clickMas=(e)=>{
+        e.preventDefault();
         if(numero<props.stock){
         setNumero(numero+1)}
     }
-    const clickMenos=()=>{
+    const clickMenos=(e)=>{
+        e.preventDefault();
         if(numero>1){
         setNumero(numero-1)}
     }

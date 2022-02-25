@@ -1,12 +1,12 @@
 
 import './App.css';
-import NavBar from './components/navbar.js';
-import {ItemListContainer} from './components/ItemListContainer';
-import {ItemCount} from './components/itemCount';
+import NavBar from './components/navBar/navbar.js';
+import {ItemListContainer} from "./components/itemListContainer/ItemListContainer"
+import {ItemCount} from './components/itemCount/itemCount';
 import {BrowserRouter, Route,Routes} from 'react-router-dom';
 import {Home}  from './components/Home/Home';
 import { ItemDetailContainer } from './components/itemDetailContainer/ItemDetailCointainer';
-import { Footer } from './components/footer';
+import { Footer } from './components/footer/footer';
 function App() {
   return (
     <BrowserRouter>

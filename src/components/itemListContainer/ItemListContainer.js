@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import Lista from "./elementos.json"
-import {ItemCount} from "./itemCount";
+import Lista from "../elementos.json"
+import {ItemCount} from "../itemCount/itemCount";
 import {Link} from 'react-router-dom'
-import {ItemDetailContainer} from  "../components/itemDetailContainer/ItemDetailCointainer"
+import {ItemDetailContainer} from  "../itemDetailContainer/ItemDetailCointainer"
 import { useParams } from "react-router-dom"
 export const ItemListContainer =({greeting})=> {
     

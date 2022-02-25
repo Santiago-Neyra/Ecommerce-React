@@ -1,6 +1,6 @@
 import React from "react";
-import logo from '../img/logoo.png'
-import CartWidget from "./CartWidget";
+//import logo from '../src/img/logoo.png'
+import CartWidget from "../cartwidget/CartWidget";
 import {BrowserRouter, Route,Routes} from 'react-router-dom';
 import {Link} from 'react-router-dom'
 function NavBar(props) {
@@ -9,7 +9,7 @@ function NavBar(props) {
         <div className="cont-1">
             
             <div className="contenedor-logo">
-              <Link to="/" className="link-logo"> <img className="logo" alt="logo" src={logo}/></Link> 
+              <Link to="/" className="link-logo"> <img className="logo" alt="logo" src="https://i.postimg.cc/nLx0z0B0/logoo.png"/></Link> 
                 
             </div>
             <div className="contenedor-carro">
