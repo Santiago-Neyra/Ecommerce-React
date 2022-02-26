@@ -9,6 +9,7 @@ import { ItemDetailContainer } from './components/itemDetailContainer/ItemDetail
 import { Footer } from './components/footer/footer';
 function App() {
   return (
+    
     <BrowserRouter>
      <NavBar> 
       

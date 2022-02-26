@@ -21,7 +21,7 @@ function NavBar(props) {
 
         <div className="contenedor-lista">
         <ul className="lista">
-        <Link to="/categoria/a" className="items"> <div className="opciones" >Pc completa</div></Link>
+        <Link to="/categoria/all" className="items"> <div className="opciones" >Pc completa</div></Link>
         <Link className="items" to="/categoria/amd"><div className="opciones" >Amd</div></Link>
         <Link to="/categoria/intel" className="items"><div className="opciones" > Intel</div></Link>
         </ul>
