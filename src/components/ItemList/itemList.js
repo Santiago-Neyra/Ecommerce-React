@@ -9,19 +9,20 @@ export const ItemList = ({productos, categoriaId})=>{
 
     if (categoriaId==="amd"){
         return(
-            <Item productos={productosAmd} ></Item>
+
+            <Item productos={productosAmd} greeting="Productos AMD" ></Item>
             
         )
     }
     if (categoriaId==="intel"){
         return(
-            <Item productos={productosIntel} ></Item>
+            <Item productos={productosIntel} greeting="Productos INTEL"></Item>
             
         )
     }
     else{
         return(
-            <Item productos={productos} ></Item>
+            <Item productos={productos} greeting="Nuestros productos" ></Item>
             
         )
     }
