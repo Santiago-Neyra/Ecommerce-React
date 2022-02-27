@@ -8,7 +8,6 @@ export const ItemListContainer =({greeting})=> {
 
     const {categoriaId} = useParams();
     
-    console.log(categoriaId);
     
     useEffect(()=>{
 

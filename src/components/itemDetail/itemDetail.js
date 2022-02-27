@@ -9,7 +9,7 @@ import { textAlign } from "@mui/system";
 
 export const ItemDetail= ()=>{
     
-    const [producto, setProducto]= useState([]);
+    const [productoss, setProducto]= useState([]);
 // CREAMOS UNA PROMESA QUE TIENE DOS FUNCIONES, RESOLVE Y REJECT
 const promesa = new Promise((resolve, reject)=>{
 //CON ESTE SET TIMEOUT TARDAREMOS 2S EN RECIBIR RESPUESTA, SIMULANDO UN SERVIDOR
@@ -31,7 +31,6 @@ useEffect(()=>{
     
     const {id} = useParams();
     
-    console.log(id);
     
     useEffect(()=>{
 
@@ -47,20 +46,25 @@ useEffect(()=>{
             return ({color:"red"})
         }
     }
+let itemEncontrado= Lista.find(e=>{
+   return (e.id===id)
+})
+
+
 
 return(
     
     <div className="container item-detail">
-        {console.log(producto[0])}
+      
         <div className="row contenedor-detail">
-            <div className="col-8 contenedor-img-detail"><img className="imagen-detail" src={Lista[id].ruta} alt="foto" /></div>
+            <div className="col-8 contenedor-img-detail"><img className="imagen-detail" src={itemEncontrado.ruta} alt="foto" /></div>
     <div className="col-4 textos-detalles">
-    <h1  className="dos">{Lista[id].name}</h1>
+    <h1  className="dos">{itemEncontrado.name}</h1>
     
-    <p className="detail-description">{Lista[id].description}</p>
-    <h4 className="detail-precio">Precio contado: <span className="precio-detail-numero">${Lista[id].price}</span>  </h4>
-    <p style={fstock(Lista[id].stock)} className="stock">stock: {Lista[id].stock}</p>
-    <ItemCount stock={Lista[id].stock} initial={1} />
+    <p className="detail-description">{itemEncontrado.description}</p>
+    <h4 className="detail-precio">Precio contado: <span className="precio-detail-numero">${itemEncontrado.price}</span>  </h4>
+    <p style={fstock(itemEncontrado.stock)} className="stock">stock: {itemEncontrado.stock}</p>
+    <ItemCount stock={itemEncontrado.stock} initial={1} />
     </div>
     </div>
     </div>
