@@ -1,3 +1,4 @@
-export const Cart=()=>{
-
+export const Cart=()=>{return(
+    <div>Carrito</div>
+    )
 }

@@ -11,16 +11,19 @@ import { NumeroEnCarrito } from "../numerocarritocontexto/contextocarrito";
 export const ItemDetail= ()=>{
     const {addItems}=useContext(NumeroEnCarrito)
     const {countWidget}=useContext(NumeroEnCarrito)
-    console.log(countWidget)
+
     const [numero , setNumero] = useState(1)
     const [estado, setEstado]=useState("none")
     const [show, setShow]=useState(false)
     const [estadoDos, SetEstadoDos]=useState("block")
     const [estadoTres, SetEstadoTres]=useState("flex")
+    const [numeroGuardado , setNumeroGuardado]=useState()
     const funcionDoble=()=>{
-        addItems(numero)
         onAdd()
 
+        addItems(numeroGuardado)
+        console.log(numeroGuardado)
+        
     }
 
     const onAdd=()=>{
@@ -28,6 +31,8 @@ export const ItemDetail= ()=>{
         setEstado("block")
         SetEstadoDos("none")
         SetEstadoTres("none")
+        setNumeroGuardado(numero)
+        
     
     }
 
