@@ -1,14 +1,50 @@
 import Lista from "../elementos.json"
 import { useParams } from "react-router-dom"
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { ItemCount } from "../itemCount/itemCount";
-import { textAlign } from "@mui/system";
+
+import { NumeroEnCarrito } from "../numerocarritocontexto/contextocarrito";
 
 
 
 
 export const ItemDetail= ()=>{
+    const {addItems}=useContext(NumeroEnCarrito)
+    const {countWidget}=useContext(NumeroEnCarrito)
+    console.log(countWidget)
+    const [numero , setNumero] = useState(1)
+    const [estado, setEstado]=useState("none")
+    const [show, setShow]=useState(false)
+    const [estadoDos, SetEstadoDos]=useState("block")
+    const [estadoTres, SetEstadoTres]=useState("flex")
+    const funcionDoble=()=>{
+        addItems(numero)
+        onAdd()
+
+    }
+
+    const onAdd=()=>{
+        setShow(!show)
+        setEstado("block")
+        SetEstadoDos("none")
+        SetEstadoTres("none")
     
+    }
+
+    const clickMas=(e)=>{
+        e.preventDefault();
+        if(numero<itemEncontrado.stock){
+        setNumero(numero+1)}
+    }
+    const clickMenos=(e)=>{
+        e.preventDefault();
+        if(numero>1){
+        setNumero(numero-1)}
+    }
+    
+    
+
+
     const [productoss, setProducto]= useState([]);
 // CREAMOS UNA PROMESA QUE TIENE DOS FUNCIONES, RESOLVE Y REJECT
 const promesa = new Promise((resolve, reject)=>{
@@ -46,10 +82,17 @@ useEffect(()=>{
             return ({color:"red"})
         }
     }
-let itemEncontrado= Lista.find(e=>{
-   return (e.id===id)
-})
 
+    //el state corresponiente a la busqueda del item con respecto al id q tenemos
+const [itemEncontrado, setItemEncontrado]= useState([])
+
+//cuando el id cambia, se dispara el setitemencontrado que le cambia el valor a item encontrado
+useEffect(()=>{
+setItemEncontrado( Lista.find(e=>{
+    return (e.id===id)
+ }))
+
+}, [id])
 
 
 return(
@@ -62,9 +105,10 @@ return(
     <h1  className="dos">{itemEncontrado.name}</h1>
     
     <p className="detail-description">{itemEncontrado.description}</p>
+    <p className="aviso"> Las PCs completas tardan entre 48hs y 72hs hábiles en ser armadas e instalarles el Windows, una vez armada, se realiza el envío o entrega correspondiente.</p>
     <h4 className="detail-precio">Precio contado: <span className="precio-detail-numero">${itemEncontrado.price}</span>  </h4>
     <p style={fstock(itemEncontrado.stock)} className="stock">stock: {itemEncontrado.stock}</p>
-    <ItemCount stock={itemEncontrado.stock} initial={1} />
+    <ItemCount stock={itemEncontrado.stock} clickMas={clickMas} clickMenos={clickMenos} initial={1} count={numero} estado={estado} estadoDos={estadoDos} onAdd={onAdd} show={show} estadoTres={estadoTres} funcionDoble={funcionDoble} />
     </div>
     </div>
     </div>

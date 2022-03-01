@@ -1,9 +1,12 @@
-import React from "react";
+
+
 //import logo from '../src/img/logoo.png'
 import CartWidget from "../cartwidget/CartWidget";
-import {BrowserRouter, Route,Routes} from 'react-router-dom';
+
 import {Link} from 'react-router-dom'
+
 function NavBar(props) {
+    
     
     return( <div className="header">
         <div className="cont-1">

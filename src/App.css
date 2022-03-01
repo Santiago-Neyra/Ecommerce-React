@@ -1,3 +1,12 @@
+.loading{
+  height: 60vh;
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .App {
   text-align: center;
   width: 80%;
@@ -142,6 +151,28 @@
   border: white solid 2px;
   transform: scale(1.1);
 }
+.butonFinalizar{
+  background-color: rgb(165, 52, 52);;
+  padding: 0;
+  width: 70%;
+  margin: auto;
+  color: rgb(255, 255, 255);
+  border: rgb(165, 52, 52) solid 2px;
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 10px;
+  text-decoration: none;
+}
+.link-finaly{
+  display: contents;
+}
+.butonFinalizar:hover{
+  transition: 0.5s;
+  background-color: rgb(165, 52, 52);
+  color: white;
+  border: white solid 2px;
+  transform: scale(1.1);
+}
 .linea{
   display: flex;
   justify-content: space-between;
@@ -170,6 +201,7 @@
   background-color: white;
   color: #000000;
   padding: 20px;
+  border: #ee433733 solid 0.1px;
   
 }
 .stock{
@@ -197,6 +229,7 @@
 }
 .nombre-producto{
   font-size: 1.2rem;
+  text-align: center;
 }
 .footer{
   background-color: #000000;
@@ -277,7 +310,15 @@
   text-decoration: none;
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 .precio-categorias{
   text-align: center;
+}
+.aviso{
+  color: rgb(24, 74, 212);
+  font-size: 0.9rem;
+  border-bottom: 0.5px #80808096 solid;
+  padding-bottom: 10px;
+  
 }

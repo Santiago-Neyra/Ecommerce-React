@@ -4,7 +4,7 @@
         "name": "PC GAMER RYZEN 5 5600G, GABINETE GAMER",
         "price":"80000",
         "description":"Componentes: - Ryzen 5 5600 - Msi a520m - 8gb ram DDR4 - Gabinete Gamer (consultar -disponibilidad) - Disco solido 240gb - Fuente 600w Thermaltake",
-        "stock":0,
+        "stock":1,
         "ruta":"https://i.postimg.cc/Y099Vvw2/a.png",
         "marca":"amd"
         
@@ -15,7 +15,7 @@
         "name": "PC GAMER RYZEN 5 2400G, GABINETE GAMER",
         "price":"68000",
         "description":"Componentes: - Ryzen 5 2400G - Msi a320m - 8gb ram DDR4 - Gabinete Gamer (consultar disponibilidad) + fuente - Disco solido 240gb",
-        "stock":1,
+        "stock":3,
         "ruta":"https://i.postimg.cc/rwWpv674/2400.png",
         "marca":"amd"
     },
@@ -24,7 +24,7 @@
         "name": "PC GAMER RYZEN 5 2400G, GABINETE GENÉRICO",
         "price":"64500",
         "description":"Componentes: Ryzen 5 2400G - Msi a320m - 8gb ram DDR4 - Gabinete generico + fuente - Disco solido 240gb",
-        "stock":3,
+        "stock":2,
         "ruta":"https://i.postimg.cc/hvfDsN9f/Sin-t-tulo-1.png",
         "marca":"amd"
           
@@ -34,7 +34,7 @@
         "name": "PC GAMER I5 10400BOX, GABINETE GAMER",
         "price":"64000",
         "description":"Componentes: Cpu Intel Core I5 10400 2.9ghz Socket 1200-Gabinete gamer + fuente (consultar disponibilidad)-Disco solido 240gb-Ram 8gb ddr4-Motherboard Gigabyte H410m-h",
-        "stock":2,
+        "stock":7,
         "ruta":"https://i.postimg.cc/mZJBRXYy/I5.png",
         "marca":"intel"
           
@@ -43,7 +43,7 @@
         "name": "PC GAMER RYZEN 5 2400G, GABINETE GAMER",
         "price":"68000",
         "description":"Componentes: - Ryzen 5 2400G - Msi a320m - 8gb ram DDR4 - Gabinete Gamer (consultar disponibilidad) + fuente - Disco solido 240gb",
-        "stock":1,
+        "stock":3,
         "ruta":"https://i.postimg.cc/rwWpv674/2400.png",
         "marca":"amd"
     },
@@ -52,7 +52,7 @@
         "name": "PC GAMER RYZEN 5 2400G, GABINETE GAMER",
         "price":"68000",
         "description":"Componentes: - Ryzen 5 2400G - Msi a320m - 8gb ram DDR4 - Gabinete Gamer (consultar disponibilidad) + fuente - Disco solido 240gb",
-        "stock":1,
+        "stock":10,
         "ruta":"https://i.postimg.cc/rwWpv674/2400.png",
         "marca":"amd"
     }
