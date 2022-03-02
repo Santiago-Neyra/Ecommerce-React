@@ -17,12 +17,12 @@ export const ItemDetail= ()=>{
     const [show, setShow]=useState(false)
     const [estadoDos, SetEstadoDos]=useState("block")
     const [estadoTres, SetEstadoTres]=useState("flex")
-    const [numeroGuardado , setNumeroGuardado]=useState()
-    const funcionDoble=()=>{
+  
+    const funcionDoble=(numeroAPasar, item)=>{
         onAdd()
 
-        addItems(numeroGuardado)
-        console.log(numeroGuardado)
+        addItems(numeroAPasar, item)
+        console.log(item)
         
     }
 
@@ -31,7 +31,7 @@ export const ItemDetail= ()=>{
         setEstado("block")
         SetEstadoDos("none")
         SetEstadoTres("none")
-        setNumeroGuardado(numero)
+    
         
     
     }
@@ -103,7 +103,7 @@ setItemEncontrado( Lista.find(e=>{
 return(
     
     <div className="container item-detail">
-      
+       
         <div className="row contenedor-detail">
             <div className="col-8 contenedor-img-detail"><img className="imagen-detail" src={itemEncontrado.ruta} alt="foto" /></div>
     <div className="col-4 textos-detalles">
@@ -113,7 +113,8 @@ return(
     <p className="aviso"> Las PCs completas tardan entre 48hs y 72hs hábiles en ser armadas e instalarles el Windows, una vez armada, se realiza el envío o entrega correspondiente.</p>
     <h4 className="detail-precio">Precio contado: <span className="precio-detail-numero">${itemEncontrado.price}</span>  </h4>
     <p style={fstock(itemEncontrado.stock)} className="stock">stock: {itemEncontrado.stock}</p>
-    <ItemCount stock={itemEncontrado.stock} clickMas={clickMas} clickMenos={clickMenos} initial={1} count={numero} estado={estado} estadoDos={estadoDos} onAdd={onAdd} show={show} estadoTres={estadoTres} funcionDoble={funcionDoble} />
+    <ItemCount stock={itemEncontrado.stock} clickMas={clickMas} clickMenos={clickMenos} initial={1} count={numero} estado={estado} estadoDos={estadoDos} onAdd={onAdd} show={show} estadoTres={estadoTres} funcionDoble={(numeroAPasar, item)=>funcionDoble(numeroAPasar,item)} item={itemEncontrado} />
+    
     </div>
     </div>
     </div>

@@ -9,14 +9,17 @@ export const CartProvider = ({children})=>{
     const [cartItems, setCartItems]=useState([])
     const [countWidget, SetCountWidget]=useState(0)
     
-    const addItems=(item, numero)=>{
-        setCartItems([...cartItems,{...item ,numero}])
-        SetCountWidget(prev=>prev+numero)
+    const addItems=(numero, item)=>{
+        console.log(cartItems)
+        SetCountWidget((countWidget+numero))
+        setCartItems(cartItems.push(item))
+        
     }
-
+   
 
     
     return(
+        
         <NumeroEnCarrito.Provider value ={{countWidget, cartItems, addItems}}>{children}</NumeroEnCarrito.Provider>
     )
 }
