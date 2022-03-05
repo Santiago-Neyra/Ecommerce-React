@@ -107,16 +107,22 @@
   justify-content: flex-end;
 }
 .carrito{
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 
 }
 .numero{
   color: white;
+  background-color: rgb(153, 49, 49);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
   font-size: 20px;
   display: flex;
   margin: 0px;
-  margin-right: 10px;
+  
+  justify-content: center;
+  align-items: center;
 }
 .item-list{
   background-color: #ffffff;
@@ -321,4 +327,15 @@
   border-bottom: 0.5px #80808096 solid;
   padding-bottom: 10px;
   
+}
+.color-loading{
+  color: red;
+}
+.spiner{
+  padding: 20px;
+  margin: 20px;
+  
+}
+.texto-carga{
+  margin: 0;
 }

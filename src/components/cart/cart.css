@@ -1,0 +1,106 @@
+.contenedorCart{
+    margin-bottom: 20px;
+}
+.tituloCarritoDeCompras{
+    text-align: center;
+}
+.fila-producto-carro{
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.imagenes-carrito{
+    width: 100px;
+    padding: 5px;
+}
+.name-carro{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-right:solid 1px rgba(128, 128, 128, 0.479) ;
+    padding-right: 5px;
+    
+}
+.cant-carro{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    padding-right: 5px;
+}
+.precio-carro{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+    
+}
+.remove-carrito{
+    background-color: brown;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 20px;
+    
+    
+}
+.remove-carrito:hover{
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+
+.contenedor-remove-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    
+    
+    
+}
+.contenedor-remove-item a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.icono-carrito{
+    max-width: 70%;
+}
+.titulo-fact{
+    text-align: center;
+}
+.totalCarrete{
+    font-size: 1.4rem;
+}
+.addAndRest{
+    background-color:brown ;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+}
+.addAndRest:hover{
+transform: scale(0.9);
+transition: 0.5s;
+}
+.CountCart{
+    display: flex;
+    flex-direction: row;
+    border-right:solid 1px rgba(128, 128, 128, 0.479) ;
+    padding-left: 10px;
+    padding-right: 10px;
+}

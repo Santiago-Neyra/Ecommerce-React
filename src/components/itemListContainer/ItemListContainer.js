@@ -15,6 +15,8 @@ export const ItemListContainer =({greeting})=> {
 
     }, [categoriaId])
 
+
+
 const [productos, setProductos]= useState([]);
 // CREAMOS UNA PROMESA QUE TIENE DOS FUNCIONES, RESOLVE Y REJECT
 const promesa = new Promise((resolve, reject)=>{
@@ -30,7 +32,8 @@ const promesa = new Promise((resolve, reject)=>{
 useEffect(()=>{
     //LLAMAMOS A PROMESA CUANDO OBTENEMOS EL RESULTADO
     promesa.then(resultado=>{
-     setProductos(resultado)
+        setProductos(resultado)
+
     })
 })
 
