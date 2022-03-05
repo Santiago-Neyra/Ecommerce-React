@@ -1,18 +1,21 @@
 import {ItemCount} from "../itemCount/itemCount";
 import { useState } from "react";
 import {Link} from 'react-router-dom'
+import { ListaCategorias } from "../ListaCategorias/listaCategorias";
 export const Item= ({greeting, productos,})=>{
-    const [numero , setNumero] = useState(1)
-    const [estado, setEstado]=useState("none")
-    const [show, setShow]=useState(false)
-    const [estadoDos, SetEstadoDos]=useState("block")
-    const [estadoTres, SetEstadoTres]=useState("flex")
+    
  return(
 
     <div className="item-list">
         
         <h1 className="palabra-greeting"> {greeting} </h1>
+        
          <div className="row">
+             <ListaCategorias/>
+                 <div className="col-10">
+                 <div className="row">
+                 
+                 
          {productos.map((elemento)=>
          
             
@@ -33,7 +36,9 @@ export const Item= ({greeting, productos,})=>{
              
              </div>)}
          </div>
-        
+         </div>
+         </div>
+         
         
          
         </div>

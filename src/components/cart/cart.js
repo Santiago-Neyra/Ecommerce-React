@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { NumeroEnCarrito } from "../numerocarritocontexto/contextocarrito";
 import "../cart/cart.css"
+import { Link } from "react-router-dom";
 
 export const Cart=()=>{
     const {cartItems}=useContext(NumeroEnCarrito)
@@ -99,11 +100,15 @@ export const Cart=()=>{
   <input type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
  </div>
  <div className="d-flex justify-content-center">
- <p className="totalCarrete">Total carrito: <span style={{color: "rgb(47, 102, 76"}}>${precioTotal}</span></p>
+ <p className="totalCarrete">Total carrito: <span style={{color: "rgb(47, 102, 76" , fontWeight:"600"}}>${precioTotal}</span></p>
  </div>
  <div className="d-flex justify-content-center">
 
  <button className="buton">FINALIZAR COMPRA</button></div>
+ <Link to="/categoria/all"> 
+    <div className="linea-boton">
+        
+    <button className="buton2">Volver al catálogo</button></div></Link>
 
 
             </div>

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import React, {useContext, useEffect, useState} from "react";
 import { ItemCount } from "../itemCount/itemCount";
 import { NumeroEnCarrito } from "../numerocarritocontexto/contextocarrito";
+import { Link } from "react-router-dom";
 export const ItemDetail= ()=>{
     const {addItems}=useContext(NumeroEnCarrito)
     const {countWidget}=useContext(NumeroEnCarrito)
@@ -65,6 +66,12 @@ setItemEncontrado( Lista.find(e=>{
 
 
 return(
+    <div className="row">
+    <div className="col-1 d-flex "><Link to={"/categoria/all"} className="buton3">Volver</Link></div>
+    
+    <div className="col-11">
+
+
     <div className="container item-detail">
         
        <div className="row contenedor-detail">
@@ -77,6 +84,12 @@ return(
     <h4 className="detail-precio">Precio contado: <span className="precio-detail-numero">${itemEncontrado.price}</span>  </h4>
     <p style={itemEncontrado>2 ? {color: 'green'} : {color: 'red'}} className="stock">stock: {itemEncontrado.stock}</p>
     <ItemCount stock={itemEncontrado.stock} clickMas={clickMas} clickMenos={clickMenos} initial={1} count={numero} estado={estado} estadoDos={estadoDos} onAdd={onAdd} show={show} estadoTres={estadoTres} funcionDoble={(numeroAPasar, item)=>funcionDoble(item, numeroAPasar)} item={itemEncontrado} />
+    <Link to="/categoria/all"> 
+    <div className="linea-boton">
+        
+    <button className="buton2">Volver al catálogo</button></div></Link>
+    </div>
+    </div>
     </div>
     </div>
     </div>

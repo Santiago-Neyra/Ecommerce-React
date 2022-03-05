@@ -1,0 +1,8 @@
+.categoria{
+    color: rgb(97, 93, 93);
+    font-weight: 8000;
+}
+.categoria:hover{
+    color: black;
+    font-weight: 600;
+}

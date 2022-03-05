@@ -11,7 +11,8 @@ export const ItemDetailContainer=()=>{
    
 
    return(
+     <div className="container">
      <ItemDetail></ItemDetail>
-    
+     </div>
    )
 }
