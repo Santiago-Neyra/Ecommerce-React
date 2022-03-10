@@ -11,7 +11,7 @@ export const CartProvider = ({children})=>{
     const [precioTotal, setPrecioTotal]=useState(0)
     
     const addItems = (item, numeroAPasar)=>{
-       
+        console.log(item.id)
         setPrecioTotal(e=>e+(item.price*numeroAPasar))
         if (cartItems.some(product => product.id === item.id)) {
             
@@ -23,7 +23,7 @@ export const CartProvider = ({children})=>{
             };
             setCartItems(copyPaste);
             SetCountWidget(prev => prev + numeroAPasar)
-            
+            console.log(cartItems)
         
         }else{
             

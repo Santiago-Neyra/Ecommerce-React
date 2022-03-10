@@ -2,6 +2,8 @@ import {ItemCount} from "../itemCount/itemCount";
 import { useState } from "react";
 import {Link} from 'react-router-dom'
 import { ListaCategorias } from "../ListaCategorias/listaCategorias";
+
+
 export const Item= ({greeting, productos,})=>{
     
  return(
@@ -29,7 +31,7 @@ export const Item= ({greeting, productos,})=>{
                 <p>{elemento.description}</p>
                 <h4 className="precio-categorias precio">Precio contado: <span className="precio-detail-numero">${elemento.price}</span></h4>
                 <p style={elemento.stock>2 ? {color: "green"} : {color:"red"}} className="stock">stock: {elemento.stock}</p>
-            <Link className="link-detalle" to={"/detalles/"+( parseInt(elemento.id))}><button className="detalle">VER DETALLE +</button></Link>
+            <Link className="link-detalle" to={"/detalles/"+(elemento.id)}><button className="detalle">VER DETALLE +</button></Link>
                 
                
              </div>

@@ -1,7 +1,12 @@
 import "../ListaCategorias/ListaCategorias.css"
 import { Link } from "react-router-dom"
 
+
 export const ListaCategorias= ()=>{
+
+
+
+
 
 return(
 <div className="col-2">

@@ -4,6 +4,10 @@ import React, {useContext, useEffect, useState} from "react";
 import { ItemCount } from "../itemCount/itemCount";
 import { NumeroEnCarrito } from "../numerocarritocontexto/contextocarrito";
 import { Link } from "react-router-dom";
+import { collection, getDoc, doc } from "firebase/firestore";
+import {db} from "../../utils/firebase";
+
+
 export const ItemDetail= ()=>{
     const {addItems}=useContext(NumeroEnCarrito)
     const {countWidget}=useContext(NumeroEnCarrito)
@@ -12,7 +16,12 @@ export const ItemDetail= ()=>{
     const [show, setShow]=useState(false)
     const [estadoDos, SetEstadoDos]=useState("block")
     const [estadoTres, SetEstadoTres]=useState("flex")
-  
+    const [itemEncontrado, setItemEncontrado]= useState([])
+    const {id} = useParams();
+useEffect(()=>{
+}, [id])
+console.log(id)
+
     const funcionDoble=(numeroAPasar, item )=>{
         onAdd()
         addItems(numeroAPasar, item )
@@ -34,35 +43,38 @@ export const ItemDetail= ()=>{
         if(numero>1){
         setNumero(numero-1)}
     }
-const [productoss, setProducto]= useState([]);
-// CREAMOS UNA PROMESA QUE TIENE DOS FUNCIONES, RESOLVE Y REJECT
-const promesa = new Promise((resolve, reject)=>{
-//CON ESTE SET TIMEOUT TARDAREMOS 2S EN RECIBIR RESPUESTA, SIMULANDO UN SERVIDOR
-    setTimeout(()=>{
-//NOS RETORNA UN ARREGLO
-    resolve(Lista)
-}, 2000);
-})
-//AL OBTENER LOS DATOS DEL SERVIDOR NOSOTROS UTILIZAMOS 
+
 useEffect(()=>{
-    //LLAMAMOS A PROMESA CUANDO OBTENEMOS EL RESULTADO
-    promesa.then(resultado=>{
-     setProducto(resultado)
-    })
-})
-const {id} = useParams();
-useEffect(()=>{
-}, [id])
+    const getData= async()=>{
+        const queryDoc = doc(db, 'item', id )
+        const response= await getDoc(queryDoc);
+        const data =response.data();
+        setItemEncontrado(data)
+        console.log(itemEncontrado)
+    }
+    getData();
+},[])
+
+
 
     
 //el state corresponiente a la busqueda del item con respecto al id q tenemos
-const [itemEncontrado, setItemEncontrado]= useState([])
+
 //cuando el id cambia, se dispara el setitemencontrado que le cambia el valor a item encontrado
-useEffect(()=>{
+/* useEffect(()=>{
 setItemEncontrado( Lista.find(e=>{
     return (e.id===id)
  }))
-}, [id])
+}, [id]) */
+if(itemEncontrado.length===0){
+    return(
+        <div className="loading">
+        <div class="spinner-border text-danger spiner" role="status"></div>
+    <p className="texto-carga">Cargando productos...</p>
+    </div>
+        )
+}
+
 
 
 return(

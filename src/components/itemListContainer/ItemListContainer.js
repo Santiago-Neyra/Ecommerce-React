@@ -1,24 +1,38 @@
 import React, {useEffect, useState} from "react";
 import Lista from "../elementos.json"
-
 import { useParams } from "react-router-dom"
 import { ItemList } from "../ItemList/itemList";
+import { collection, getDocs } from "firebase/firestore";
+import {db} from "../../utils/firebase";
+
 export const ItemListContainer =({greeting})=> {
-    
+    const [productos, setProductos]= useState([]);
 
-    const {categoriaId} = useParams();
-    
-    
     useEffect(()=>{
+    const getData= async()=>{
+        const query = collection(db, 'item')
+        const response= await getDocs(query);
+        console.log("respuesta", response.docs)
+        const data =response.docs.map(doc=>{ return ({id: doc.id, ...doc.data()}
+        )})
+        setProductos(data)
+        console.log(data)
+    }
+    getData();
+},[])
+        
+    
 
+    
+    
+    
+    
+    
+    const {categoriaId} = useParams();
+    useEffect(()=>{
+ }, [categoriaId])
 
-
-    }, [categoriaId])
-
-
-
-const [productos, setProductos]= useState([]);
-// CREAMOS UNA PROMESA QUE TIENE DOS FUNCIONES, RESOLVE Y REJECT
+/* // CREAMOS UNA PROMESA QUE TIENE DOS FUNCIONES, RESOLVE Y REJECT
 const promesa = new Promise((resolve, reject)=>{
 //CON ESTE SET TIMEOUT TARDAREMOS 2S EN RECIBIR RESPUESTA, SIMULANDO UN SERVIDOR
     setTimeout(()=>{
@@ -35,7 +49,7 @@ useEffect(()=>{
         setProductos(resultado)
 
     })
-})
+}) */
 
 return(
     <ItemList productos={productos} categoriaId={categoriaId} />
