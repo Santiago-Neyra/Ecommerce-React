@@ -48,9 +48,10 @@ useEffect(()=>{
     const getData= async()=>{
         const queryDoc = doc(db, 'item', id )
         const response= await getDoc(queryDoc);
-        const data =response.data();
+        const data = {...response.data(), id:id };
+        console.log(data)
         setItemEncontrado(data)
-        console.log(itemEncontrado)
+        
     }
     getData();
 },[])

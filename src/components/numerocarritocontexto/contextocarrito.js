@@ -10,44 +10,44 @@ export const CartProvider = ({children})=>{
     const [countWidget, SetCountWidget]=useState(0)
     const [precioTotal, setPrecioTotal]=useState(0)
     
-    const addItems = (item, numeroAPasar)=>{
+    const addItems = (item, cantidadDelItem)=>{
         console.log(item.id)
-        setPrecioTotal(e=>e+(item.price*numeroAPasar))
+        setPrecioTotal(e=>e+(item.price*cantidadDelItem))
         if (cartItems.some(product => product.id === item.id)) {
             
             const copyPaste = [...cartItems];
             const prodIndex = cartItems.findIndex(product => product.id === item.id);
             copyPaste[prodIndex]={
                 ...copyPaste[prodIndex],
-                numeroAPasar: copyPaste[prodIndex].numeroAPasar + numeroAPasar,
+                cantidadDelItem: copyPaste[prodIndex].cantidadDelItem + cantidadDelItem,
             };
             setCartItems(copyPaste);
-            SetCountWidget(prev => prev + numeroAPasar)
+            SetCountWidget(prev => prev + cantidadDelItem)
             console.log(cartItems)
         
         }else{
             
-            setCartItems([...cartItems,{...item,numeroAPasar}])
-            SetCountWidget(prev => prev + numeroAPasar)}
+            setCartItems([...cartItems,{...item,cantidadDelItem}])
+            SetCountWidget(prev => prev + cantidadDelItem)}
             
     }
     const removeItems = (item) =>{
         
         const newList = cartItems.filter((e)=> {return e.id!==item.id})
         setCartItems(newList)
-        setPrecioTotal(prev =>{return prev-(item.price * item.numeroAPasar)})
-        SetCountWidget(prev=>{return prev-item.numeroAPasar})
+        setPrecioTotal(prev =>{return prev-(item.price * item.cantidadDelItem)})
+        SetCountWidget(prev=>{return prev-item.cantidadDelItem})
         
      }
      const AddInCart= (item)=>{
-         if(item.numeroAPasar<item.stock){
+         if(item.cantidadDelItem<item.stock){
          SetCountWidget(countWidget=>countWidget+1)
          setPrecioTotal(a =>  parseInt(a)+parseInt(item.price))
          const newItems= cartItems.map((items)=>{
             if(item.id===items.id){
                 return{
                     ...items,
-                    numeroAPasar: (items.numeroAPasar+1) 
+                    cantidadDelItem: (items.cantidadDelItem+1) 
                 }
             }
             
@@ -58,14 +58,14 @@ export const CartProvider = ({children})=>{
     }
      }
      const RestInCart= (item)=>{
-         if(item.numeroAPasar>1){
+         if(item.cantidadDelItem>1){
         SetCountWidget(countWidget=>countWidget-1)
         setPrecioTotal(prev=>prev-(item.price))
         const newItems= cartItems.map((items)=>{
             if(item.id===items.id){
                 return{
                     ...items,
-                    numeroAPasar: (items.numeroAPasar-1) 
+                    cantidadDelItem: (items.cantidadDelItem-1) 
                 }
             }
         
