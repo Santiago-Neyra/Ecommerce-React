@@ -1,15 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext,  useState } from "react";
 import { NumeroEnCarrito } from "../numerocarritocontexto/contextocarrito";
 import "../cart/cart.css"
 import { Link } from "react-router-dom";
-import { collection, orderBy, Timestamp, addDoc } from "firebase/firestore";
+import { collection, Timestamp, addDoc } from "firebase/firestore";
 import { db } from "../../utils/firebase";
-import { async } from "@firebase/util";
+
 
 
 export const Cart=()=>{
     const {cartItems}=useContext(NumeroEnCarrito)
-    const {countWidget}=useContext(NumeroEnCarrito)
+    
     const {removeItems}=useContext(NumeroEnCarrito)
     const {precioTotal}=useContext(NumeroEnCarrito)
     const {AddInCart}=useContext(NumeroEnCarrito)
@@ -105,7 +105,7 @@ export const Cart=()=>{
                 
             <div className="card fila-producto-carro"> 
 
-              <img className="imagenes-carrito" src={prod.ruta} ></img>
+              <img className="imagenes-carrito" alt="Imagen producto" src={prod.ruta} ></img>
               <p className="name-carro">{prod.name}</p>
               <div className="CountCart">
               <div className="d-flex align-items-center"><button className="addAndRest" onClick={()=>RestInCart(prod)}>-</button></div>
@@ -114,7 +114,7 @@ export const Cart=()=>{
               </div>
               <p className="precio-carro">Total: ${(prod.price*prod.cantidadDelItem)}</p>
               <div className="contenedor-remove-item">
-              <a className="remove-carrito" onClick={()=>removeItems(prod)}><img className="icono-carrito" src="https://i.postimg.cc/W4mfSXpL/eliminar.png"></img></a></div>
+              <a className="remove-carrito" onClick={()=>removeItems(prod)}><img className="icono-carrito" src="https://i.postimg.cc/W4mfSXpL/eliminar.png"/></a></div>
               </div>)}))}
               </div>
               

@@ -14,8 +14,8 @@ return(
              <Link to={"/categoria/all"} className="list-group-item categoria" >TODOS LOS PRODUCTOS</Link>
             <Link to={"/categoria/amd"} className="list-group-item categoria">PC AMD</Link>
             <Link to={"/categoria/intel"} className="list-group-item categoria">PC INTEL</Link>
-            <Link to={"/categoria/all"} className="list-group-item categoria">PERIFERICOS</Link>
-            <Link to={"/categoria/all"} className="list-group-item categoria">SILLAS GAMER</Link>
+            <Link to={"/categoria/periferico"} className="list-group-item categoria">PERIFERICOS</Link>
+            <Link to={"/categoria/silla"} className="list-group-item categoria">SILLAS GAMER</Link>
             </ul>
                  
                  </div>

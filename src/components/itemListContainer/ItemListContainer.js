@@ -7,7 +7,14 @@ import {db} from "../../utils/firebase";
 
 export const ItemListContainer =({greeting})=> {
     const [productos, setProductos]= useState([]);
+    
+    const {categoriaId} = useParams();
+    useEffect(()=>{
+        
+    },[])
+     
 
+    console.log(categoriaId)
     useEffect(()=>{
     const getData= async()=>{
         const query = collection(db, 'item')
@@ -15,22 +22,41 @@ export const ItemListContainer =({greeting})=> {
         console.log("respuesta", response.docs)
         const data =response.docs.map(doc=>{ return ({id: doc.id, ...doc.data()}
         )})
+        
+
         setProductos(data)
         console.log(data)
     }
     getData();
 },[])
         
-    
 
     
+    const [productosFiltrados, setProductosFiltrados]=useState(productos)
+    useEffect( () => {
+
+        if(categoriaId){
+        
+        setProductosFiltrados(productos.filter(e=>e.marca===categoriaId))
+        
+        }
+        
+        if(categoriaId===undefined){
+        
+        setProductosFiltrados(productos)
+        
+        }
+        
+        
+        
+        },[categoriaId])
     
     
     
     
-    const {categoriaId} = useParams();
-    useEffect(()=>{
- }, [categoriaId])
+    
+    
+
 
 /* // CREAMOS UNA PROMESA QUE TIENE DOS FUNCIONES, RESOLVE Y REJECT
 const promesa = new Promise((resolve, reject)=>{
@@ -52,7 +78,7 @@ useEffect(()=>{
 }) */
 
 return(
-    <ItemList productos={productos} categoriaId={categoriaId} />
+    <ItemList productos={productosFiltrados.length>0? productosFiltrados:productos}   />
 
 )
 

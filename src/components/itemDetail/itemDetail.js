@@ -1,16 +1,16 @@
-import Lista from "../elementos.json"
+
 import { useParams } from "react-router-dom"
 import React, {useContext, useEffect, useState} from "react";
 import { ItemCount } from "../itemCount/itemCount";
 import { NumeroEnCarrito } from "../numerocarritocontexto/contextocarrito";
 import { Link } from "react-router-dom";
-import { collection, getDoc, doc } from "firebase/firestore";
+import { getDoc, doc } from "firebase/firestore";
 import {db} from "../../utils/firebase";
 
 
 export const ItemDetail= ()=>{
     const {addItems}=useContext(NumeroEnCarrito)
-    const {countWidget}=useContext(NumeroEnCarrito)
+    
     const [numero , setNumero] = useState(1)
     const [estado, setEstado]=useState("none")
     const [show, setShow]=useState(false)

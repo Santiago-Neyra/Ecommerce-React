@@ -5,7 +5,7 @@ import { ListaCategorias } from "../ListaCategorias/listaCategorias";
 
 
 export const Item= ({greeting, productos,})=>{
-    
+
  return(
 
     <div className="item-list">
