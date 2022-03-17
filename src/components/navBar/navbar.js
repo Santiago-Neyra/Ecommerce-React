@@ -26,8 +26,7 @@ function NavBar(props) {
         <ul className="lista">
         <Link to="/" className="items"> <div className="opciones" >INICIO</div></Link>
         <Link to="/categoria/all" className="items"> <div className="opciones" >PRODUCTOS</div></Link>
-        <Link className="items" to="/"><div className="opciones" >NOSOTROS</div></Link>
-        <Link to="/" className="items"><div className="opciones" > CONTACTO</div></Link>
+        <Link className="items" to="/nosotros"><div className="opciones" >NOSOTROS</div></Link>
         </ul>
         </div>
      </div>

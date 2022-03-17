@@ -10,6 +10,7 @@ import { Footer } from './components/footer/footer';
 import { ThemeContext } from '@emotion/react';
 import { CartProvider, NumeroEnCarrito } from './components/numerocarritocontexto/contextocarrito';
 import {Cart} from "./components/cart/cart"
+import {Nosotros} from "./components/nosotros/nosotros"
 function App() {
  
  
@@ -27,6 +28,7 @@ function App() {
        <Route path="/detalles/:id" element={<ItemDetailContainer/>} />
        <Route path="/categoria/:categoriaId" element={<ItemListContainer/>} />
        <Route path="/cart" element={<Cart/>} />
+       <Route path='/nosotros' element={<Nosotros/>}/>
        
      </Routes>
      <Footer></Footer>

@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.titulo-nosotros{
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.titulo-parrafo{
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+}
+.parrafo{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+}
+.contenedor-nosotros{
+    width: 80%;
+    
+}
+.contenedor-contenedor-nosotros{
+ 
+    background-image: url(https://i.postimg.cc/0N4tJWcw/Sitio-Fondo-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+    
+    
+}
