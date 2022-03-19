@@ -2,13 +2,11 @@ import "../nosotros/nosotros.css"
 
 
 export const Nosotros=()=>{
- 
+
 return(<>
     <h1 className="titulo-nosotros">Sobre Nosotros</h1>
     <div className="contenedor-contenedor-nosotros">
     <div className="container contenedor-nosotros">
-    
-   
     <div >
     <h2 className="titulo-parrafo">¿Quiénes somos?</h2>
     <p className="parrafo">

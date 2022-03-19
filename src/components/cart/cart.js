@@ -46,7 +46,6 @@ export const Cart=()=>{
             
         )
     }
-
     const realizarOrden=async(e)=>{
         e.preventDefault();
         let orden= {
@@ -68,120 +67,85 @@ export const Cart=()=>{
             const docRef=await addDoc(queryCollection, orden)
             console.log('doc', docRef.id)
         }
-    
-    
-   
-
-    /* const totalCarrito=(precioItem, cantidad)=>{
-        setPrecioTotal(precioTotal+(precioItem * cantidad))
-    } */
-    /* const precioTotalfunction = (prod)=>{
-        setPrecioTotal(precioTotal=precioTotal+(prod.price*prod.cantidadDelItem))
-        
-    } */
-
-    return(
-   <>
+return(
+    <>
   
-   <div className="container">
-  
- <div className="row contenedorCart">
- <div className="col-8 d-flex">
-     
-     <div className="container-fluid">
-     <h2 className="tituloCarritoDeCompras">CARRITO DE COMPRAS</h2>
-
-
-    {cartItems.length === 0 ? (<h2>Carrito vacío..</h2>) :
-    
-    
-    
-    (
-        
+    <div className="container">
+        <div className="row contenedorCart">
+        <div className="col-lg-6 col-12 d-flex">
+        <div className="container-fluid">
+        <h2 className="tituloCarritoDeCompras">PRODUCTOS EN CARRITO:</h2>
+        {cartItems.length === 0 ? (<h2>Carrito vacío..</h2>) :
+        (
         cartItems.map((prod)=>{
-            
             return(
-            
-                
-            <div className="card fila-producto-carro"> 
+            <div className="card fila-producto-carro">
 
-              <img className="imagenes-carrito" alt="Imagen producto" src={prod.ruta} ></img>
-              <p className="name-carro">{prod.name}</p>
-              <div className="CountCart">
-              <div className="d-flex align-items-center"><button className="addAndRest" onClick={()=>RestInCart(prod)}>-</button></div>
-              <p className="cant-carro">Cantidad: {prod.cantidadDelItem}</p>
-              <div className="d-flex align-items-center" ><button className="addAndRest" onClick={()=>AddInCart(prod)}>+</button></div>
-              </div>
-              <p className="precio-carro">Total: ${(prod.price*prod.cantidadDelItem)}</p>
-              <div className="contenedor-remove-item">
-              <a className="remove-carrito" onClick={()=>removeItems(prod)}><img className="icono-carrito" src="https://i.postimg.cc/W4mfSXpL/eliminar.png"/></a></div>
-              </div>)}))}
-              </div>
-              
+                <div className="d-flex justify-content-center">
+                <img className="imagenes-carrito" alt="Imagen producto" src={prod.ruta} ></img></div>
+            <p className="name-carro">{prod.name}</p>
+            <div className="CountCart">
+            <div className="d-flex align-items-center"><button className="addAndRest" onClick={()=>RestInCart(prod)}>-</button></div>
+            <p className="cant-carro">Cantidad: {prod.cantidadDelItem}</p>
+            <div className="d-flex align-items-center" ><button className="addAndRest" onClick={()=>AddInCart(prod)}>+</button></div>
             </div>
+            <p className="precio-carro">Total: ${(prod.price*prod.cantidadDelItem)}</p>
+            <div className="contenedor-remove-item">
+            <a className="remove-carrito"  onClick={()=>removeItems(prod)}><img className="icono-carrito" src="https://i.postimg.cc/W4mfSXpL/eliminar.png"/></a></div>
+            </div>)}))}
+            </div>
+                </div>
+                <div className="col-lg-6 col-12">
+        <h2 className="titulo-fact">FACTURACION Y ENVIO</h2>
+        <div >
+        <div class="input-group mb-3 formulario-compra">
+<span class="input-group-text" id="basic-addon1">Nombre y apellido</span>
+<input onChange={funcionNombre} type="text"  class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
+</div>
+<div >
+            <div class="input-group mb-3 formulario-compra">
+<span class="input-group-text" id="basic-addon1">Dirección</span>
+<input onChange={funcionDireccion} type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
+</div>
+<div >
+            <div class="input-group mb-3 formulario-compra">
+<span class="input-group-text" id="basic-addon1">Número de teléfono</span>
+<input onChange={funcionTelefono} type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
+</div>
+<div >
+            <div class="input-group mb-3 formulario-compra">
+<input onChange={funcionEmail} type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input>
+<span class="input-group-text" id="basic-addon1">@gmail.com</span>
+</div>
+</div>
+<div >
+            <div class="input-group mb-3 formulario-compra">
+<span class="input-group-text" id="basic-addon1">Número de Tarjeta</span>
+<input type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
+</div>         
+<div >
+            <div class="input-group mb-3 formulario-compra">
+<span class="input-group-text" id="basic-addon1">DNI titular</span>
+<input type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
+</div>
+<div >
+            <div class="input-group mb-3 formulario-compra">
+<span class="input-group-text" id="basic-addon1">Código de seguridad</span>
+<input type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
+</div>
+<div className="d-flex justify-content-center">
+<p className="totalCarrete">Total carrito: <span style={{color: "rgb(47, 102, 76" , fontWeight:"600"}}>${precioTotal}</span></p>
+</div>
+<div className="d-flex justify-content-center">
 
-            <div className="col-4">
-<h2 className="titulo-fact">FACTURACION Y ENVIO</h2>
-
-                <div >
-            <div class="input-group mb-3 formulario-compra">
-  <span class="input-group-text" id="basic-addon1">Nombre y apellido</span>
-  <input onChange={funcionNombre} type="text"  class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
- </div>
- <div >
-            <div class="input-group mb-3 formulario-compra">
-  <span class="input-group-text" id="basic-addon1">Dirección</span>
-  <input onChange={funcionDireccion} type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
- </div>
- <div >
-            <div class="input-group mb-3 formulario-compra">
-  <span class="input-group-text" id="basic-addon1">Número de teléfono</span>
-  <input onChange={funcionTelefono} type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
- </div>
- <div >
-            <div class="input-group mb-3 formulario-compra">
-  <input onChange={funcionEmail} type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input>
-  <span class="input-group-text" id="basic-addon1">@gmail.com</span>
-  </div>
-  </div>
-  <div >
-            <div class="input-group mb-3 formulario-compra">
-  <span class="input-group-text" id="basic-addon1">Número de Tarjeta</span>
-  <input type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
- </div>         
- <div >
-            <div class="input-group mb-3 formulario-compra">
-  <span class="input-group-text" id="basic-addon1">DNI titular</span>
-  <input type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
- </div>
- <div >
-            <div class="input-group mb-3 formulario-compra">
-  <span class="input-group-text" id="basic-addon1">Código de seguridad</span>
-  <input type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
- </div>
- <div className="d-flex justify-content-center">
- <p className="totalCarrete">Total carrito: <span style={{color: "rgb(47, 102, 76" , fontWeight:"600"}}>${precioTotal}</span></p>
- </div>
- <div className="d-flex justify-content-center">
-
- <button onClick={realizarOrden} className="buton">FINALIZAR COMPRA</button></div>
- <Link to="/categoria/all"> 
+<button onClick={realizarOrden} className="buton">FINALIZAR COMPRA</button></div>
+<Link to="/categoria/all"> 
     <div className="linea-boton">
         
     <button className="buton2">Volver al catálogo</button></div></Link>
-
-
-            </div>
-
-            </div>
-            
-           
-        
-        
-       
-
-           </div>
-            
-    </>
+</div>
+</div>
+</div>
+</>
 )
 }

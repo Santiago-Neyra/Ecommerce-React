@@ -9,7 +9,6 @@ export const Footer=()=>{
             <a className="logos" href="https://api.whatsapp.com/send?phone=3415960272&text=Hola%20Dual%20Key!%20Tengo%20una%20consulta.."> <img src="https://i.postimg.cc/BnMSKxLh/whatsapp-logo-png.png" alt="logo" /> </a>
             </div>
             <div className="col-6 contacto-footer">
-            
             <p>Email: dualkeyadm@gmail.com</p>
             </div>
             </div>

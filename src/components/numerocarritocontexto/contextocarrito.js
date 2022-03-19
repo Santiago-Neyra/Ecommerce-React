@@ -9,7 +9,6 @@ export const CartProvider = ({children})=>{
     const [cartItems, setCartItems]=useState([])
     const [countWidget, SetCountWidget]=useState(0)
     const [precioTotal, setPrecioTotal]=useState(0)
-    
     const addItems = (item, cantidadDelItem)=>{
         console.log(item.id)
         setPrecioTotal(e=>e+(item.price*cantidadDelItem))
@@ -38,27 +37,25 @@ export const CartProvider = ({children})=>{
         setPrecioTotal(prev =>{return prev-(item.price * item.cantidadDelItem)})
         SetCountWidget(prev=>{return prev-item.cantidadDelItem})
         
-     }
-     const AddInCart= (item)=>{
-         if(item.cantidadDelItem<item.stock){
-         SetCountWidget(countWidget=>countWidget+1)
-         setPrecioTotal(a =>  parseInt(a)+parseInt(item.price))
-         const newItems= cartItems.map((items)=>{
+    }
+    const AddInCart= (item)=>{
+        if(item.cantidadDelItem<item.stock){
+        SetCountWidget(countWidget=>countWidget+1)
+        setPrecioTotal(a =>  parseInt(a)+parseInt(item.price))
+        const newItems= cartItems.map((items)=>{
             if(item.id===items.id){
                 return{
                     ...items,
                     cantidadDelItem: (items.cantidadDelItem+1) 
-                }
-            }
-            
+                } }
             return items 
         })
         setCartItems(newItems)
         console.log(cartItems)
     }
-     }
-     const RestInCart= (item)=>{
-         if(item.cantidadDelItem>1){
+    }
+    const RestInCart= (item)=>{
+        if(item.cantidadDelItem>1){
         SetCountWidget(countWidget=>countWidget-1)
         setPrecioTotal(prev=>prev-(item.price))
         const newItems= cartItems.map((items)=>{
@@ -74,14 +71,11 @@ export const CartProvider = ({children})=>{
         setCartItems(newItems)
         console.log(cartItems)
 
-       
-
-    }
-    }
-
     
-    return(
-        
+
+    }
+    }
+return(
         <NumeroEnCarrito.Provider value ={{countWidget, cartItems, addItems, removeItems, precioTotal, AddInCart, RestInCart}}>{children}</NumeroEnCarrito.Provider>
     )
 }

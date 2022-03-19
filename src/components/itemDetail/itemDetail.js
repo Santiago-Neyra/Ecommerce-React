@@ -79,8 +79,8 @@ if(itemEncontrado.length===0){
 
 
 return(
-    <div className="row">
-    <div className="col-1 d-flex "><Link to={"/categoria/all"} className="buton3">Volver</Link></div>
+    <div className="row d-flex justify-content-center" >
+    <div className="col-lg-1 d-none d-lg-flex "><Link to={"/categoria/all"} className="buton3">Volver</Link></div>
     
     <div className="col-11">
 
@@ -88,8 +88,8 @@ return(
     <div className="container item-detail">
         
        <div className="row contenedor-detail">
-            <div className="col-8 contenedor-img-detail"><img className="imagen-detail" src={itemEncontrado.ruta} alt="foto" /></div>
-    <div className="col-4 textos-detalles">
+            <div className="col-12 col-lg-8 contenedor-img-detail"><img className="imagen-detail" src={itemEncontrado.ruta} alt="foto" /></div>
+    <div className="col-12 col-lg-4 textos-detalles">
     <h1  className="dos">{itemEncontrado.name}</h1>
     
     <p className="detail-description">{itemEncontrado.description}</p>

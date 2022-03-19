@@ -4,13 +4,7 @@ import { useParams } from "react-router-dom"
 import Lista from "../elementos.json"
 import { ItemDetail } from "../itemDetail/itemDetail"
 export const ItemDetailContainer=()=>{
-
-  
-      
-    
-   
-
-   return(
+return(
      <div className="container">
      <ItemDetail></ItemDetail>
      </div>

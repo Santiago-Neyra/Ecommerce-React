@@ -7,23 +7,16 @@ import { ListaCategorias } from "../ListaCategorias/listaCategorias";
 export const Item= ({greeting, productos,})=>{
 
  return(
-
-    <div className="item-list">
+<div className="item-list">
         
         <h1 className="palabra-greeting"> {greeting} </h1>
         
          <div className="row">
              <ListaCategorias/>
-                 <div className="col-10">
+                 <div className="col-12 col-lg-10">
                  <div className="row">
-                 
-                 
-         {productos.map((elemento)=>
-         
-            
-         <div  className="carta col-3" key={elemento.id}>
-             
-
+                 {productos.map((elemento)=>
+          <div  className="carta col-12 col-md-6 col-lg-4 col-xl-3" key={elemento.id}>
              <div>
                  <div className="d-flex justify-content-center">
                  <img className="img-producto img-fluid" src={elemento.ruta} alt="Producto" /> </div>
@@ -32,18 +25,12 @@ export const Item= ({greeting, productos,})=>{
                 <h4 className="precio-categorias precio">Precio contado: <span className="precio-detail-numero">${elemento.price}</span></h4>
                 <p style={elemento.stock>2 ? {color: "green"} : {color:"red"}} className="stock">stock: {elemento.stock}</p>
             <Link className="link-detalle" to={"/detalles/"+(elemento.id)}><button className="detalle">VER DETALLE +</button></Link>
-                
-               
-             </div>
-             
+               </div>
              </div>)}
          </div>
          </div>
          </div>
-         
-        
-         
-        </div>
+         </div>
 )
 
 }

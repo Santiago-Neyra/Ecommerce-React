@@ -12,12 +12,8 @@
   width: 80%;
   margin: auto;
 }
-.opciones:hover{
-  color: red;
-}
-.opciones{
-  font-weight: 400;
-}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -30,29 +26,11 @@
 }
 
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
 .items{
   text-decoration: none;
   color: azure;
@@ -87,9 +65,7 @@
 
 }
 
-.logo{
-  width: 40%;
-}
+
 .cont-1{
   display: flex;
 
@@ -281,6 +257,7 @@
 }
 .img-producto{
   width: 300px;
+  margin-bottom: 10px;
   
  
 }
@@ -373,7 +350,7 @@
   text-align: center;
 }
 .aviso{
-  color: rgb(24, 74, 212);
+  color: rgb(47, 102, 76);
   font-size: 0.9rem;
   border-bottom: 0.5px #80808096 solid;
   padding-bottom: 10px;

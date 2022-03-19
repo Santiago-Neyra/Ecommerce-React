@@ -22,10 +22,8 @@ return(
         </div>
       </div>
     </div>
-
-  </div>
+    </div>
      <ItemListContainer greeting="Computadoras armadas:" />
-     
     </div>
     )
 }
