@@ -95,7 +95,7 @@ return(
     <h4 className="detail-precio">Precio contado: <span className="precio-detail-numero">${itemEncontrado.price}</span>  </h4>
     <p style={itemEncontrado>2 ? {color: 'green'} : {color: 'red'}} className="stock">stock: {itemEncontrado.stock}</p>
     <ItemCount stock={itemEncontrado.stock} clickMas={clickMas} clickMenos={clickMenos} initial={1} count={numero} estado={estado} estadoDos={estadoDos} onAdd={onAdd} show={show} estadoTres={estadoTres} funcionDoble={(numeroAPasar, item)=>funcionDoble(item, numeroAPasar)} item={itemEncontrado} />
-    <Link to="/categoria/all"> 
+    <Link className="link-volver"  to="/categoria/all"> 
     <div className="linea-boton">
         
     <button className="buton2">Volver al catálogo</button></div></Link>
