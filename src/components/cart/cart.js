@@ -4,6 +4,7 @@ import "../cart/cart.css"
 import { Link } from "react-router-dom";
 import { collection, Timestamp, addDoc } from "firebase/firestore";
 import { db } from "../../utils/firebase";
+import { margin } from "@mui/system";
 
 
 
@@ -14,9 +15,6 @@ export const Cart=()=>{
     const {precioTotal}=useContext(NumeroEnCarrito)
     const {AddInCart}=useContext(NumeroEnCarrito)
     const {RestInCart}=useContext(NumeroEnCarrito)
-    console.log(cartItems)
-
-
     const [nombreUsuario, setNombreUsuario]=useState()
     const [direccionUsuario, setDireccionUsuario]=useState()
     const [numeroUsuario, setNumeroUsuario]=useState()
@@ -47,7 +45,7 @@ export const Cart=()=>{
         )
     }
     const realizarOrden=async(e)=>{
-        e.preventDefault();
+        
         let orden= {
             comprador:{
                 nombre:nombreUsuario,
@@ -59,13 +57,12 @@ export const Cart=()=>{
             total:"$"+precioTotal
 
             }
-            console.log(orden)
-            const queryCollection=collection(db, "order")
+           const queryCollection=collection(db, "order")
             orden.date= Timestamp.fromDate(new Date())
             console.log(orden)
             //con esto creo unnuevo documento, paso dos parametros, dodonde lo guardo y que guardo
             const docRef=await addDoc(queryCollection, orden)
-            console.log('doc', docRef.id)
+    
         }
 return(
     <>
@@ -75,11 +72,13 @@ return(
         <div className="col-lg-6 col-12 d-flex">
         <div className="container-fluid">
         <h2 className="tituloCarritoDeCompras">PRODUCTOS EN CARRITO:</h2>
-        {cartItems.length === 0 ? (<h2>Carrito vacío..</h2>) :
+        {cartItems.length === 0 ? (<div className="d-flex justify-content-center carrito-vacio"><h2 style={{width:"50%", margin:"auto"}}>Carrito vacío..</h2>
+        <img className="img-vacio" style={{margin:"auto", width:"300px"}} src="https://i.postimg.cc/ydj2C7RQ/e048beec6b899e794ea3a10bca235742-funny-gamer-cartoon.png"></img>
+        </div>) :
         (
         cartItems.map((prod)=>{
             return(
-            <div className="card fila-producto-carro">
+            <div key={prod.id} className="card fila-producto-carro">
 
                 <div className="d-flex justify-content-center">
                 <img className="imagenes-carrito" alt="Imagen producto" src={prod.ruta} ></img></div>
@@ -98,48 +97,48 @@ return(
                 <div className="col-lg-6 col-12">
         <h2 className="titulo-fact">FACTURACION Y ENVIO</h2>
         <div >
-        <div class="input-group mb-3 formulario-compra">
-<span class="input-group-text" id="basic-addon1">Nombre y apellido</span>
-<input onChange={funcionNombre} type="text"  class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
+        <div className="input-group mb-3 formulario-compra">
+<span className="input-group-text" id="basic-addon1">Nombre y apellido</span>
+<input onChange={funcionNombre} type="text"  className="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
 </div>
 <div >
-            <div class="input-group mb-3 formulario-compra">
-<span class="input-group-text" id="basic-addon1">Dirección</span>
-<input onChange={funcionDireccion} type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
+            <div className="input-group mb-3 formulario-compra">
+<span className="input-group-text" id="basic-addon1">Dirección</span>
+<input onChange={funcionDireccion} type="text" className="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
 </div>
 <div >
-            <div class="input-group mb-3 formulario-compra">
-<span class="input-group-text" id="basic-addon1">Número de teléfono</span>
-<input onChange={funcionTelefono} type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
+            <div className="input-group mb-3 formulario-compra">
+<span className="input-group-text" id="basic-addon1">Número de teléfono</span>
+<input onChange={funcionTelefono} type="text" className="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
 </div>
 <div >
-            <div class="input-group mb-3 formulario-compra">
-<input onChange={funcionEmail} type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input>
-<span class="input-group-text" id="basic-addon1">@gmail.com</span>
+            <div className="input-group mb-3 formulario-compra">
+<input onChange={funcionEmail} type="text" className="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input>
+<span className="input-group-text" id="basic-addon1">@gmail.com</span>
 </div>
 </div>
 <div >
-            <div class="input-group mb-3 formulario-compra">
-<span class="input-group-text" id="basic-addon1">Número de Tarjeta</span>
-<input type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
+            <div className="input-group mb-3 formulario-compra">
+<span className="input-group-text" id="basic-addon1">Número de Tarjeta</span>
+<input type="text" className="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
 </div>         
 <div >
-            <div class="input-group mb-3 formulario-compra">
-<span class="input-group-text" id="basic-addon1">DNI titular</span>
-<input type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
+            <div className="input-group mb-3 formulario-compra">
+<span className="input-group-text" id="basic-addon1">DNI titular</span>
+<input type="text" className="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
 </div>
 <div >
-            <div class="input-group mb-3 formulario-compra">
-<span class="input-group-text" id="basic-addon1">Código de seguridad</span>
-<input type="text" class="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
+            <div className="input-group mb-3 formulario-compra">
+<span className="input-group-text" id="basic-addon1">Código de seguridad</span>
+<input type="text" className="form-control" placeholder="Escribe aquí" aria-label="Username" aria-describedby="basic-addon1"></input></div>
 </div>
 <div className="d-flex justify-content-center">
 <p className="totalCarrete">Total carrito: <span style={{color: "rgb(47, 102, 76" , fontWeight:"600"}}>${precioTotal}</span></p>
 </div>
-<div className="d-flex justify-content-center">
 
-<button onClick={realizarOrden} className="buton">FINALIZAR COMPRA</button></div>
-<Link to="/categoria/all"> 
+<Link to="/finalizado" className="d-flex justify-content-center link-finalizarr">
+<button onClick={realizarOrden} className="buton">FINALIZAR COMPRA</button></Link>
+<Link className="link-volver" to="/categoria/all"> 
     <div className="linea-boton">
         
     <button className="buton2">Volver al catálogo</button></div></Link>

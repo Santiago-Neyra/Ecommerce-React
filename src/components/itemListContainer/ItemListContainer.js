@@ -11,16 +11,13 @@ export const ItemListContainer =({greeting})=> {
     useEffect(()=>{
         
     },[])
-    console.log(categoriaId)
     useEffect(()=>{
     const getData= async()=>{
         const query = collection(db, 'item')
         const response= await getDocs(query);
-        console.log("respuesta", response.docs)
         const data =response.docs.map(doc=>{ return ({id: doc.id, ...doc.data()}
         )})
         setProductos(data)
-        console.log(data)
     }
     getData();
 },[])

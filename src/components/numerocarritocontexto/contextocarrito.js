@@ -10,7 +10,6 @@ export const CartProvider = ({children})=>{
     const [countWidget, SetCountWidget]=useState(0)
     const [precioTotal, setPrecioTotal]=useState(0)
     const addItems = (item, cantidadDelItem)=>{
-        console.log(item.id)
         setPrecioTotal(e=>e+(item.price*cantidadDelItem))
         if (cartItems.some(product => product.id === item.id)) {
             
@@ -22,7 +21,6 @@ export const CartProvider = ({children})=>{
             };
             setCartItems(copyPaste);
             SetCountWidget(prev => prev + cantidadDelItem)
-            console.log(cartItems)
         
         }else{
             
@@ -51,7 +49,6 @@ export const CartProvider = ({children})=>{
             return items 
         })
         setCartItems(newItems)
-        console.log(cartItems)
     }
     }
     const RestInCart= (item)=>{
@@ -69,7 +66,7 @@ export const CartProvider = ({children})=>{
             return items 
         })
         setCartItems(newItems)
-        console.log(cartItems)
+      
 
     
 

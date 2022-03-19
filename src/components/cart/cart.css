@@ -109,3 +109,18 @@ transition: 0.5s;
     justify-content: center;
     margin: 10px;
 }
+.carrito-vacio{
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.imagen-vacio{
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+.link-finalizarr{
+    text-decoration: none;
+}
+.link-volver{
+    text-decoration: none;
+}

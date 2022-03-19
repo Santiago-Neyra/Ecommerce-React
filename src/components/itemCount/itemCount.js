@@ -9,7 +9,6 @@ export const ItemCount = (props)=>{
                 <p className="numero-agregar">{props.count}</p>
                 <a onClick={props.clickMas} className="mas" href="#">+</a>
             </div>
-            {console.log(props.item.id)}
             <div className="linea-boton">
                 <button className="buton" disabled={props.show} style={{display:props.estadoDos}} onClick={()=>props.funcionDoble(props.count, props.item)} >Sumar al Carrito</button>
                 <Link className="link-finaly" to="/cart"><button className="butonFinalizar" style={{display: props.estado}} disabled={!props.show} onClick={props.onAdd} >Ir a finalizar Compra</button></Link>

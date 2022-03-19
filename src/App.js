@@ -11,6 +11,7 @@ import { ThemeContext } from '@emotion/react';
 import { CartProvider, NumeroEnCarrito } from './components/numerocarritocontexto/contextocarrito';
 import {Cart} from "./components/cart/cart"
 import {Nosotros} from "./components/nosotros/nosotros"
+import { PedidoTomado } from './components/pedidotomado/pedidoTomado.js';
 function App() {
  
  
@@ -29,7 +30,7 @@ function App() {
        <Route path="/categoria/:categoriaId" element={<ItemListContainer/>} />
        <Route path="/cart" element={<Cart/>} />
        <Route path='/nosotros' element={<Nosotros/>}/>
-       
+       <Route path="/finalizado" element={<PedidoTomado/>}/>
      </Routes>
      <Footer></Footer>
      </CartProvider>

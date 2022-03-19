@@ -20,7 +20,6 @@ export const ItemDetail= ()=>{
     const {id} = useParams();
 useEffect(()=>{
 }, [id])
-console.log(id)
 
     const funcionDoble=(numeroAPasar, item )=>{
         onAdd()
@@ -49,7 +48,6 @@ useEffect(()=>{
         const queryDoc = doc(db, 'item', id )
         const response= await getDoc(queryDoc);
         const data = {...response.data(), id:id };
-        console.log(data)
         setItemEncontrado(data)
         
     }
@@ -70,7 +68,7 @@ setItemEncontrado( Lista.find(e=>{
 if(itemEncontrado.length===0){
     return(
         <div className="loading">
-        <div class="spinner-border text-danger spiner" role="status"></div>
+        <div className="spinner-border text-danger spiner" role="status"></div>
     <p className="texto-carga">Cargando productos...</p>
     </div>
         )

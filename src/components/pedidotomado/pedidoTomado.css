@@ -1,0 +1,11 @@
+.gracias{
+    text-align: center;
+}
+.img-gracias{
+    margin: auto;
+}
+.container-gracias{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}

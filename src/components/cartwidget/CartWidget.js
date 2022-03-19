@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom'// import cart from '../../src/img/cart.png
 
 function CartWidget() {
 const {countWidget}=useContext(NumeroEnCarrito)
-console.log(countWidget)
 if(countWidget>0){
         return(
 <> 
