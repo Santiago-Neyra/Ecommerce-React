@@ -1,7 +1,7 @@
 import "../navBar/navbar.css"
 //import logo from '../src/img/logoo.png'
 import CartWidget from "../cartwidget/CartWidget";
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 function NavBar(props) {
   return(
     <div className="header">
@@ -13,7 +13,7 @@ function NavBar(props) {
           <CartWidget/>
         </div>
       </div>
-      <div className="contenedor-lista" >
+      <div className="contenedor-lista">
         <nav className="navbar navbar-expand-lg">
           <div className="container-fluid d-flex justify-content-center">
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup " aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,9 +22,9 @@ function NavBar(props) {
               </span>
             </button>
             <div className="collapse navbar-collapse navBar-mark" id="navbarNavAltMarkup">
-              <Link to="/" className="nav-link active" aria-current="page" href="#">HOME</Link>
-              <Link to="/categoria/all" className="nav-link" href="#">PRODUCTOS</Link>
-              <Link to="/nosotros" className="nav-link" href="#">NOSOTROS</Link>
+              <NavLink to="/" className="nav-link active" aria-current="page" href="#">HOME</NavLink>
+              <NavLink to="/categoria/all" className="nav-link" href="#">PRODUCTOS</NavLink>
+              <NavLink to="/nosotros" className="nav-link" href="#">NOSOTROS</NavLink>
             </div>
           </div>
         </nav>
