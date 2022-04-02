@@ -7,18 +7,15 @@ import {Link} from 'react-router-dom'// import cart from '../../src/img/cart.png
 function CartWidget() {
 const {countWidget}=useContext(NumeroEnCarrito)
 if(countWidget>0){
-        return(
-<> 
-<p className="numero">{countWidget}</p>
-<Link to="/cart" >
-<img className="carrito" src="https://i.postimg.cc/W1g5TQFd/cart.png"alt="cart" />
-</Link>
-</>
-)
-}else{
+    return(
+        <> 
+            <p className="numero">{countWidget}</p>
+            <Link to="/cart" >
+                <img className="carrito" src="https://i.postimg.cc/W1g5TQFd/cart.png"alt="cart" />
+            </Link>
+        </>
+)}
+else{
     return ""
-}
-
-
-}
+}}
 export default CartWidget;

@@ -5,8 +5,8 @@ import Lista from "../elementos.json"
 import { ItemDetail } from "../itemDetail/itemDetail"
 export const ItemDetailContainer=()=>{
 return(
-     <div className="container">
-     <ItemDetail></ItemDetail>
-     </div>
-   )
+    <div className="container">
+      <ItemDetail></ItemDetail>
+    </div>
+)
 }

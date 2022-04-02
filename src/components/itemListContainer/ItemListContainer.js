@@ -8,27 +8,24 @@ import {db} from "../../utils/firebase";
 export const ItemListContainer =({greeting})=> {
     const [productos, setProductos]= useState([]);
     const {categoriaId} = useParams();
+    const [productosFiltrados, setProductosFiltrados]=useState(productos)
     useEffect(()=>{
-        
-    },[])
-    useEffect(()=>{
-    const getData= async()=>{
-        const query = collection(db, 'item')
-        const response= await getDocs(query);
-        const data =response.docs.map(doc=>{ return ({id: doc.id, ...doc.data()}
-        )})
+        const getData= async()=>{
+            const query = collection(db, 'item')
+            const response= await getDocs(query);
+            const data =response.docs.map(doc=>{ return ({id: doc.id, ...doc.data()}
+            )})
         setProductos(data)
     }
-    getData();
+        getData();
 },[])
-   const [productosFiltrados, setProductosFiltrados]=useState(productos)
     useEffect( () => {
         if(categoriaId){
-        setProductosFiltrados(productos.filter(e=>e.marca===categoriaId))}
+            setProductosFiltrados(productos.filter(e=>e.marca===categoriaId))}
         if(categoriaId===undefined){
-         setProductosFiltrados(productos)
-     }
-       },[categoriaId,productos])
-return(
-    <ItemList productos={productosFiltrados.length>0? productosFiltrados:productos}   />
-)}
+            setProductosFiltrados(productos)
+        }
+    },[categoriaId,productos])
+    return(
+        <ItemList productos={productosFiltrados.length>0? productosFiltrados:productos}   />
+    )}
