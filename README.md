@@ -17,6 +17,8 @@ Teconologías utilizadas en este proyecto:
 
 
 Hola! Este es un E-commerce realizado con HTML-CSS-BOOTSTRAP-JS-REACT, tanto para dispositivos móviles como para Web, espero les guste! Saludos!
+En este sitio el cliente tiene la oportunidad de navegar por el catálogo de una tienda de computación con distintas categorias e ir agregando distintos productos al carrito, una vez seleccionados los productos puede dirigirse al carrito donde podrá observar los distintos productos, quitar, agregar o finalizar la compra.
+Este sitio se comporta de manera responsive para cualquier tipo de dispositivo
 
 ⬇⬇⬇ Dejo link a video de youtube ⬇⬇⬇
 
