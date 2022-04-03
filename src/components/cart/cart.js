@@ -15,11 +15,18 @@ export const Cart=()=>{
     const {precioTotal}=useContext(NumeroEnCarrito)
     const {AddInCart}=useContext(NumeroEnCarrito)
     const {RestInCart}=useContext(NumeroEnCarrito)
-    const [nombreUsuario, setNombreUsuario]=useState()
-    const [direccionUsuario, setDireccionUsuario]=useState()
-    const [numeroUsuario, setNumeroUsuario]=useState()
-    const [emailUsuario, setEmailUsuario]=useState()
-    
+    const [nombreUsuario, setNombreUsuario]=useState("a")
+    const [direccionUsuario, setDireccionUsuario]=useState("a")
+    const [numeroUsuario, setNumeroUsuario]=useState("a")
+    const [emailUsuario, setEmailUsuario]=useState("a")
+    const LinkPrueba=()=>{
+        if(nombreUsuario.length>2 && direccionUsuario.length>2 && numeroUsuario.length>2 && emailUsuario.length>2){
+            return ("/finalizado")
+        }
+        else{
+            return("")
+        }
+    }
         
     
     const funcionNombre=(e)=>{
@@ -64,7 +71,12 @@ export const Cart=()=>{
             //con esto creo unnuevo documento, paso dos parametros, dodonde lo guardo y que guardo
         const docRef=await addDoc(queryCollection, orden)
         Clear()
-        
+    }
+    const pruebaRealizar=()=>{
+        if(nombreUsuario.length>2 && direccionUsuario.length>2 && numeroUsuario.length>2 &&emailUsuario.length>2){
+           realizarOrden()
+        } 
+        else{alert("Datos ingresados no válidos")}
     }
 return(
     <>
@@ -85,7 +97,7 @@ return(
                                                 <img className="imagenes-carrito" alt="Imagen producto" src={prod.ruta} ></img>
                                             </div>
                                             <p className="name-carro">{prod.name}</p>
-                                            <div className="CountCart">
+                                            <div className="Count-Cart">
                                                 <div className="d-flex align-items-center">
                                                     <button className="addAndRest" onClick={()=>RestInCart(prod)}>-
                                                     </button>
@@ -162,8 +174,8 @@ return(
                         </p>
                     </div>
 
-                    <Link to="/finalizado" className="d-flex justify-content-center link-finalizarr">
-                        <button onClick={realizarOrden} className="buton">FINALIZAR COMPRA</button>
+                    <Link className="d-flex justify-content-center link-finalizarr" to={LinkPrueba()}>
+                        <button onClick={pruebaRealizar} className="buton">FINALIZAR COMPRA</button>
                     </Link>
                     <Link className="link-volver" to="/categoria/all"> 
                         <div className="linea-boton">

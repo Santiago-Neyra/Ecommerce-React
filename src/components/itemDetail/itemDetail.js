@@ -17,9 +17,9 @@ export const ItemDetail= ()=>{
     const [estadoTres, SetEstadoTres]=useState("flex")
     const [itemEncontrado, setItemEncontrado]= useState([])
     const {id} = useParams();
-    const funcionDoble=(numeroAPasar, item )=>{
+    const funcionDoble=(numeroAPasar, item, cantReal )=>{
         onAdd()
-        addItems(numeroAPasar, item )
+        addItems(numeroAPasar, item, cantReal )
         
         }
     const onAdd=()=>{
@@ -85,7 +85,7 @@ return(
                         <p className="aviso"> Las PCs completas tardan entre 48hs y 72hs hábiles en ser armadas e instalarles el Windows, una vez armada, se realiza el envío o entrega correspondiente.</p>
                         <h4 className="detail-precio">Precio contado: <span className="precio-detail-numero">{`$${itemEncontrado.price}`}</span></h4>
                         <p style={itemEncontrado>2 ? {color: 'green'} : {color: 'red'}} className="stock">stock: {itemEncontrado.stock}</p>
-                        {itemEncontrado.stock> 0 ? (<ItemCount stock={itemEncontrado.stock} clickMas={clickMas} clickMenos={clickMenos} initial={1} count={numero} estado={estado} estadoDos={estadoDos} onAdd={onAdd} show={show} estadoTres={estadoTres} funcionDoble={(numeroAPasar, item)=>funcionDoble(item, numeroAPasar)} item={itemEncontrado}/>) : (<p className="sin-stock">Sin stock! Consultar por WhatsApp</p>)
+                        {itemEncontrado.stock> 0 ? (<ItemCount stock={itemEncontrado.stock} clickMas={clickMas} clickMenos={clickMenos} initial={1} count={numero} estado={estado} estadoDos={estadoDos} onAdd={onAdd} stockReal={itemEncontrado.stock} show={show} estadoTres={estadoTres} funcionDoble={(numeroAPasar, item, cantReal)=>funcionDoble(item, numeroAPasar, cantReal)} item={itemEncontrado}/>) : (<p className="sin-stock">Sin stock! Consultar por WhatsApp</p>)
                         }
                         
                         <Link className="link-volver"  to="/categoria/all"> 

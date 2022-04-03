@@ -9,7 +9,7 @@ export const ItemCount = (props)=>{
                 <a onClick={props.clickMas} className="mas" href="#">+</a>
             </div>
             <div className="linea-boton">
-                <button className="buton" disabled={props.show} style={{display:props.estadoDos}} onClick={()=>props.funcionDoble(props.count, props.item)} >Sumar al Carrito</button>
+                <button className="buton" disabled={props.show} style={{display:props.estadoDos}} onClick={()=>props.funcionDoble(props.count, props.item, props.stockReal)} >Sumar al Carrito</button>
                 <Link className="link-finaly" to="/cart">
                     <button className="butonFinalizar" style={{display: props.estado}} disabled={!props.show} onClick={props.onAdd} >Ir a finalizar Compra
                     </button>

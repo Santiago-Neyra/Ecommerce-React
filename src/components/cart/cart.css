@@ -101,7 +101,7 @@
 transform: scale(0.9);
 transition: 0.5s;
 }
-.CountCart{
+.Count-Cart{
     display: flex;
     flex-direction: row;
     padding-left: 10px;

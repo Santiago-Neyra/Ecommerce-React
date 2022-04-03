@@ -9,8 +9,10 @@ export const CartProvider = ({children})=>{
     const [cartItems, setCartItems]=useState([])
     const [countWidget, SetCountWidget]=useState(0)
     const [precioTotal, setPrecioTotal]=useState(0)
-    const addItems = (item, cantidadDelItem)=>{
+    const addItems = (item, cantidadDelItem, cantReal)=>{
+        
         setPrecioTotal(e=>e+(item.price*cantidadDelItem))
+            
             if (cartItems.some(product => product.id === item.id)) {
                 const copyPaste = [...cartItems];
                 const prodIndex = cartItems.findIndex(product => product.id === item.id);
@@ -22,7 +24,7 @@ export const CartProvider = ({children})=>{
                 SetCountWidget(prev => prev + cantidadDelItem)
             }
             else{
-            setCartItems([...cartItems,{...item,cantidadDelItem}])
+            setCartItems([...cartItems,{...item,cantidadDelItem, cantReal}])
             SetCountWidget(prev => prev + cantidadDelItem)
             }
             
