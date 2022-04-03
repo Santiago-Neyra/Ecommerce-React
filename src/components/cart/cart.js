@@ -10,6 +10,7 @@ import { margin } from "@mui/system";
 
 export const Cart=()=>{
     const {cartItems}=useContext(NumeroEnCarrito)
+    const{Clear}=useContext(NumeroEnCarrito)
     const {removeItems}=useContext(NumeroEnCarrito)
     const {precioTotal}=useContext(NumeroEnCarrito)
     const {AddInCart}=useContext(NumeroEnCarrito)
@@ -18,6 +19,9 @@ export const Cart=()=>{
     const [direccionUsuario, setDireccionUsuario]=useState()
     const [numeroUsuario, setNumeroUsuario]=useState()
     const [emailUsuario, setEmailUsuario]=useState()
+    
+        
+    
     const funcionNombre=(e)=>{
         return(
             setNombreUsuario(e.target.value)
@@ -42,6 +46,7 @@ export const Cart=()=>{
             
         )
     }
+    
     const realizarOrden=async(e)=>{
         let orden= {
             comprador:{
@@ -58,12 +63,14 @@ export const Cart=()=>{
         console.log(orden)
             //con esto creo unnuevo documento, paso dos parametros, dodonde lo guardo y que guardo
         const docRef=await addDoc(queryCollection, orden)
+        Clear()
+        
     }
 return(
     <>
         <div className="container">
             <div className="row contenedorCart">
-                <div className="col-lg-6 col-12 d-flex">
+                <div className="col-lg-6 col-12 d-flex contenedor-facturacion">
                     <div className="container-fluid">
                         <h2 className="tituloCarritoDeCompras">PRODUCTOS EN CARRITO:</h2>
                         {cartItems.length === 0 ? (
@@ -97,9 +104,16 @@ return(
                                                 </a>
                                             </div>
                                         </div>)}))}
+                                        {cartItems.length>0 ?(
+                                        <div className="d-flex justify-content-center">
+                                            <button className="buton-4"  onClick={()=>Clear()}>Vaciar carrito</button>
+                                        </div>    
+                                        ) : "" }
+                                        
                     </div>
+                    
                 </div>
-                <div className="col-lg-6 col-12">
+                <div className="col-lg-6 col-12 contenedor-facturacion">
                     <h2 className="titulo-fact">FACTURACION Y ENVIO</h2>
                     <div >
                         <div className="input-group mb-3 formulario-compra">

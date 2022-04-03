@@ -124,3 +124,26 @@ transition: 0.5s;
 .link-volver{
     text-decoration: none;
 }
+.buton-4{
+background-color: #ffffff;
+  padding: 0;
+  width: 30%;
+  margin: auto;
+  color: rgb(165, 52, 52);
+  border: rgb(165, 52, 52) solid 2px;
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 10px;
+  
+}
+.buton-4:hover{
+    transition: 0.5s;
+    background-color: rgb(165, 52, 52);
+    color: white;
+    border: white solid 2px;
+    transform: scale(1.1);
+  }
+  .contenedor-facturacion{
+      padding: 10px;
+      align-items: center;
+  }

@@ -66,7 +66,13 @@ export const CartProvider = ({children})=>{
         setCartItems(newItems)
     }
     }
+    const Clear=()=>{
+
+        setCartItems([])
+        SetCountWidget(0)
+    }
+    
     return(
-        <NumeroEnCarrito.Provider value ={{countWidget, cartItems, addItems, removeItems, precioTotal, AddInCart, RestInCart}}>{children}</NumeroEnCarrito.Provider>
+        <NumeroEnCarrito.Provider value ={{countWidget, cartItems, addItems, removeItems, precioTotal, AddInCart, RestInCart, Clear}}>{children}</NumeroEnCarrito.Provider>
     )
 }
