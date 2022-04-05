@@ -7,7 +7,6 @@ import {BrowserRouter, Route,Routes} from 'react-router-dom';
 import {Home}  from './components/Home/Home';
 import { ItemDetailContainer } from './components/itemDetailContainer/ItemDetailCointainer';
 import { Footer } from './components/footer/footer';
-import { ThemeContext } from '@emotion/react';
 import { CartProvider, NumeroEnCarrito } from './components/numerocarritocontexto/contextocarrito';
 import {Cart} from "./components/cart/cart"
 import {Nosotros} from "./components/nosotros/nosotros"
