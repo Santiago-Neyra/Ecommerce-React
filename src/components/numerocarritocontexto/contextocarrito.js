@@ -11,21 +11,30 @@ export const CartProvider = ({children})=>{
     const [precioTotal, setPrecioTotal]=useState(0)
     const addItems = (item, cantidadDelItem, cantReal)=>{
         
-        setPrecioTotal(e=>e+(item.price*cantidadDelItem))
+        
             
-            if (cartItems.some(product => product.id === item.id)) {
+            if (cartItems.some(product => product.id === item.id )) {
+                if( cartItems.some(product => product.id === item.id &&  (product.stock >= (product.cantidadDelItem+ cantidadDelItem)))  ){
+                setPrecioTotal(e=>e+(item.price*cantidadDelItem))
                 const copyPaste = [...cartItems];
                 const prodIndex = cartItems.findIndex(product => product.id === item.id);
                 copyPaste[prodIndex]={
+                    
                     ...copyPaste[prodIndex],
                     cantidadDelItem: copyPaste[prodIndex].cantidadDelItem + cantidadDelItem,
                 };
                 setCartItems(copyPaste);
                 SetCountWidget(prev => prev + cantidadDelItem)
+                }
+                else{
+                    alert("stock máximo superado")
+                }   
             }
+            
             else{
             setCartItems([...cartItems,{...item,cantidadDelItem, cantReal}])
             SetCountWidget(prev => prev + cantidadDelItem)
+            setPrecioTotal(e=>e+(item.price*cantidadDelItem))
             }
             
     }
@@ -69,7 +78,7 @@ export const CartProvider = ({children})=>{
     }
     }
     const Clear=()=>{
-
+        setPrecioTotal(0)
         setCartItems([])
         SetCountWidget(0)
     }

@@ -32,7 +32,7 @@ export const ListaCategorias= ()=>{
       //MODIFICACION PROPUESTA EN REENTREGA
       <div className="col-12 col-lg-2">
          <ul className="list-group">
-      {categories.map(category=>(<Link className="list-group-item categoria" to={`/categoria/${category.cat}`}>{category.texto}</Link>))}
+      {categories.map(category=>(<Link key={category.cat} className="list-group-item categoria" to={`/categoria/${category.cat}`}>{category.texto}</Link>))}
       </ul>
       </div>
       /* <div className="col-12 col-lg-2">

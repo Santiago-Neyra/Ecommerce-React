@@ -4,19 +4,16 @@ import React, {useContext, useEffect, useState} from "react";
 import { ItemCount } from "../itemCount/itemCount";
 import { NumeroEnCarrito } from "../numerocarritocontexto/contextocarrito";
 import { Link } from "react-router-dom";
-import { getDoc, doc } from "firebase/firestore";
-import {db} from "../../utils/firebase";
 
 
-export const ItemDetail= ()=>{
+
+export const ItemDetail= ( {itemEncontrado} )=>{
     const {addItems}=useContext(NumeroEnCarrito)
     const [numero , setNumero] = useState(1)
     const [estado, setEstado]=useState("none")
     const [show, setShow]=useState(false)
     const [estadoDos, SetEstadoDos]=useState("block")
     const [estadoTres, SetEstadoTres]=useState("flex")
-    const [itemEncontrado, setItemEncontrado]= useState([])
-    const {id} = useParams();
     const funcionDoble=(numeroAPasar, item, cantReal )=>{
         onAdd()
         addItems(numeroAPasar, item, cantReal )
@@ -38,16 +35,7 @@ export const ItemDetail= ()=>{
         if(numero>1){
         setNumero(numero-1)}
     }
-    useEffect(()=>{
-    const getData= async()=>{
-        const queryDoc = doc(db, 'item', id )
-        const response= await getDoc(queryDoc);
-        const data = {...response.data(), id:id };
-        setItemEncontrado(data)
-        
-    }
-    getData();
-},[])
+    
 
 
 

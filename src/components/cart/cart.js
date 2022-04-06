@@ -19,7 +19,7 @@ export const Cart=()=>{
     const [numeroUsuario, setNumeroUsuario]=useState("a")
     const [emailUsuario, setEmailUsuario]=useState("a")
     const LinkPrueba=()=>{
-        if(nombreUsuario.length>2 && direccionUsuario.length>2 && numeroUsuario.length>2 && emailUsuario.length>2){
+        if(nombreUsuario.length>2 && direccionUsuario.length>2 && numeroUsuario.length>2 && emailUsuario.length>2 && cartItems.length>0){
             return ("/finalizado")
         }
         else{
@@ -72,10 +72,10 @@ export const Cart=()=>{
         Clear()
     }
     const pruebaRealizar=()=>{
-        if(nombreUsuario.length>2 && direccionUsuario.length>2 && numeroUsuario.length>2 &&emailUsuario.length>2){
+        if(nombreUsuario.length>2 && direccionUsuario.length>2 && numeroUsuario.length>2 &&emailUsuario.length>2 && cartItems.length >0 ){
            realizarOrden()
         } 
-        else{alert("Datos ingresados no válidos")}
+        else{alert("Datos ingresados no válidos o carrito vacío")}
     }
 return(
     <>
