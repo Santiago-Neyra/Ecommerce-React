@@ -1,7 +1,5 @@
-import { Fragment, useEffect, useState } from "react"
-import reactDom from "react-dom"
+import {useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import Lista from "../elementos.json"
 import { ItemDetail } from "../itemDetail/itemDetail"
 import { getDoc, doc } from "firebase/firestore";
 import {db} from "../../utils/firebase";

@@ -1,6 +1,6 @@
 
-import { useParams } from "react-router-dom"
-import React, {useContext, useEffect, useState} from "react";
+
+import React, {useContext, useState} from "react";
 import { ItemCount } from "../itemCount/itemCount";
 import { NumeroEnCarrito } from "../numerocarritocontexto/contextocarrito";
 import { Link } from "react-router-dom";
